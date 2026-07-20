@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Experiment scenario result",
+  "type": "object",
+  "required": ["schema_version", "scenario_id", "family", "status"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "scenario_id": { "type": "string" },
+    "family": { "type": "string" },
+    "status": { "enum": ["completed", "harness_failure"] },
+    "prediction_written_before_oracle": { "type": "boolean" },
+    "criteria": { "type": "object" },
+    "observation": { "type": "object" },
+    "error": { "type": "object" }
+  }
+}
+

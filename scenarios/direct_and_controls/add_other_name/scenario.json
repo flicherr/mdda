@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "controls.add_different_name",
+  "family": "direct_and_controls",
+  "description": "Adding an exported declaration with another name changes the full interface but not the call outcome.",
+  "language_rules": ["basic.lookup.general", "module.interface"],
+  "mutation": "Add an unrelated exported function with a different name.",
+  "primary_module": "Provider",
+  "tracked_modules": ["Provider"],
+  "observation": { "kind": "selected_declaration", "probe_id": "result" },
+  "states": {
+    "before": { "modules": [{ "name": "Provider", "source": "before/provider.cppm", "imports": [] }], "consumer": "before/consumer.cpp" },
+    "after": { "modules": [{ "name": "Provider", "source": "after/provider.cppm", "imports": [] }], "consumer": "after/consumer.cpp" }
+  }
+}
+

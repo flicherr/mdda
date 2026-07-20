@@ -1,0 +1,6 @@
+import Provider;
+
+int main() {
+  [[clang::annotate("manalyzer_probe:result")]] auto result = convert(1);
+  return static_cast<int>(result);
+}

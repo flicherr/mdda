@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "overload.add_constrained_candidate",
+  "family": "lookup_overload",
+  "description": "A newly added constrained overload is more specialized for the unchanged argument.",
+  "language_rules": ["temp.constr.order", "over.match.best.general"],
+  "mutation": "Add an overload constrained to four-byte types.",
+  "primary_module": "Provider",
+  "tracked_modules": ["Provider"],
+  "observation": { "kind": "selected_declaration", "probe_id": "result" },
+  "states": {
+    "before": { "modules": [{ "name": "Provider", "source": "before/provider.cppm", "imports": [] }], "consumer": "before/consumer.cpp" },
+    "after": { "modules": [{ "name": "Provider", "source": "after/provider.cppm", "imports": [] }], "consumer": "after/consumer.cpp" }
+  }
+}
+

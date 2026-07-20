@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/module-declaration-dependency-analysis/scenario.schema.json",
+  "title": "C++20 module dependency scenario",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "id",
+    "family",
+    "description",
+    "language_rules",
+    "mutation",
+    "primary_module",
+    "tracked_modules",
+    "observation",
+    "states"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_.-]*$" },
+    "family": { "type": "string", "minLength": 1 },
+    "description": { "type": "string", "minLength": 1 },
+    "language_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "mutation": { "type": "string", "minLength": 1 },
+    "primary_module": { "type": "string", "minLength": 1 },
+    "tracked_modules": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {
+          "enum": [
+            "selected_declaration",
+            "expression_type",
+            "selected_specialization",
+            "deduced_type",
+            "constraint_result",
+            "name_reachability",
+            "compile_status",
+            "diagnostic_class"
+          ]
+        },
+        "probe_id": { "type": ["string", "null"] }
+      }
+    },
+    "states": {
+      "type": "object",
+      "required": ["before", "after"],
+      "properties": {
+        "before": { "$ref": "#/$defs/state" },
+        "after": { "$ref": "#/$defs/state" }
+      }
+    }
+  },
+  "$defs": {
+    "state": {
+      "type": "object",
+      "required": ["modules", "consumer"],
+      "properties": {
+        "consumer": { "type": "string", "minLength": 1 },
+        "modules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["name", "source"],
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "source": { "type": "string", "minLength": 1 },
+              "imports": {
+                "type": "array",
+                "items": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

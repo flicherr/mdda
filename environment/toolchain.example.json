@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "clangxx": "clang++",
+  "analyzer": "analyzer/build/manalyzer",
+  "required_clang_version": "22.1.8",
+  "cxx_standard": "c++20",
+  "bmi_mode": "full",
+  "target": null,
+  "extra_compile_flags": [
+    "-fno-color-diagnostics",
+    "-ferror-limit=0"
+  ],
+  "extra_analyzer_flags": [],
+  "environment": {
+    "LC_ALL": "C",
+    "LANG": "C",
+    "TZ": "UTC"
+  }
+}

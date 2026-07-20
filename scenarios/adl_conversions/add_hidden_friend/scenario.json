@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "adl.add_hidden_friend",
+  "family": "adl_conversions",
+  "description": "A hidden friend introduced in an exported class is found by ADL and replaces a generic function.",
+  "language_rules": ["basic.lookup.argdep", "class.friend", "over.match.best.general"],
+  "mutation": "Add a hidden friend definition to the argument type.",
+  "primary_module": "Provider",
+  "tracked_modules": ["Provider"],
+  "observation": { "kind": "selected_declaration", "probe_id": "result" },
+  "states": {
+    "before": { "modules": [{ "name": "Provider", "source": "before/provider.cppm", "imports": [] }], "consumer": "before/consumer.cpp" },
+    "after": { "modules": [{ "name": "Provider", "source": "after/provider.cppm", "imports": [] }], "consumer": "after/consumer.cpp" }
+  }
+}

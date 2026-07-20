@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "manalyzer output",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "mode",
+    "tool",
+    "had_errors",
+    "declarations",
+    "imports",
+    "uses",
+    "probes"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "mode": { "enum": ["provider", "consumer"] },
+    "had_errors": { "type": "boolean" },
+    "declarations": { "type": "array" },
+    "imports": { "type": "array" },
+    "uses": { "type": "array" },
+    "probes": { "type": "array" }
+  }
+}

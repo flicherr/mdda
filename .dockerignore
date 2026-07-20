@@ -1,0 +1,11 @@
+.git
+analyzer/build
+build
+python/*.egg-info
+dist
+results/runs
+results/publication
+**/__pycache__
+*.pyc
+*.pcm
+*.o

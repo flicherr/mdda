@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "specialization.add_partial_specialization",
+  "family": "specializations_guides",
+  "description": "A newly added partial specialization changes the instantiated member return type.",
+  "language_rules": ["temp.spec.partial", "temp.spec.partial.match"],
+  "mutation": "Add a pointer partial specialization of an unchanged primary class template.",
+  "primary_module": "Provider",
+  "tracked_modules": ["Provider"],
+  "observation": { "kind": "expression_type", "probe_id": "result" },
+  "states": {
+    "before": { "modules": [{ "name": "Provider", "source": "before/provider.cppm", "imports": [] }], "consumer": "before/consumer.cpp" },
+    "after": { "modules": [{ "name": "Provider", "source": "after/provider.cppm", "imports": [] }], "consumer": "after/consumer.cpp" }
+  }
+}
+
