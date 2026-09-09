@@ -1,0 +1,105 @@
+{
+  "declarations": [],
+  "had_errors": false,
+  "imports": [],
+  "logical_module": "",
+  "mode": "consumer",
+  "probe_request": "result",
+  "probes": [
+    {
+      "deduced_type": "long",
+      "expression": "choose(1)",
+      "expression_type": "long",
+      "id": "result",
+      "location": {
+        "column": 54,
+        "file": "consumer.cpp",
+        "line": 4
+      },
+      "selected_declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "Function",
+        "normalized": {
+          "attributes": [],
+          "canonical_type": "long (int)",
+          "consteval": false,
+          "constexpr": false,
+          "inline_specified": false,
+          "kind": "Function",
+          "owning_module": "Provider",
+          "parameters": [
+            {
+              "pack": false,
+              "type": "int"
+            }
+          ],
+          "qualified_name": "choose",
+          "return_type": "long",
+          "variadic": false
+        },
+        "owning_module": "Provider",
+        "qualified_name": "choose",
+        "stable_id": "usr:c:@F@choose#I#",
+        "structural_key": "Provider|Function|choose|long (int)|0|",
+        "usr": "c:@F@choose#I#"
+      }
+    }
+  ],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/lookup_overload/non_template_preference/after/consumer.cpp",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": [
+    {
+      "declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "Function",
+        "normalized": {
+          "attributes": [],
+          "canonical_type": "long (int)",
+          "consteval": false,
+          "constexpr": false,
+          "inline_specified": false,
+          "kind": "Function",
+          "owning_module": "Provider",
+          "parameters": [
+            {
+              "pack": false,
+              "type": "int"
+            }
+          ],
+          "qualified_name": "choose",
+          "return_type": "long",
+          "variadic": false
+        },
+        "owning_module": "Provider",
+        "qualified_name": "choose",
+        "stable_id": "usr:c:@F@choose#I#",
+        "structural_key": "Provider|Function|choose|long (int)|0|",
+        "usr": "c:@F@choose#I#"
+      },
+      "identity": "usr:c:@F@choose#I#",
+      "locations": [
+        {
+          "column": 63,
+          "file": "consumer.cpp",
+          "line": 4
+        },
+        {
+          "column": 63,
+          "file": "consumer.cpp",
+          "line": 4
+        }
+      ],
+      "usage_kinds": [
+        "decl_ref",
+        "direct_callee"
+      ]
+    }
+  ]
+}

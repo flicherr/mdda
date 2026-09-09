@@ -1,0 +1,182 @@
+{
+  "declarations": [],
+  "had_errors": false,
+  "imports": [],
+  "logical_module": "",
+  "mode": "consumer",
+  "probe_request": "result",
+  "probes": [
+    {
+      "deduced_type": "long",
+      "expression": "inspect(value)",
+      "expression_type": "long",
+      "id": "result",
+      "location": {
+        "column": 54,
+        "file": "consumer.cpp",
+        "line": 5
+      },
+      "selected_declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "Function",
+        "normalized": {
+          "attributes": [],
+          "canonical_type": "long (const struct Item &)",
+          "consteval": false,
+          "constexpr": false,
+          "inline_specified": false,
+          "kind": "Function",
+          "owning_module": "Provider",
+          "parameters": [
+            {
+              "pack": false,
+              "type": "const struct Item &"
+            }
+          ],
+          "qualified_name": "inspect",
+          "return_type": "long",
+          "variadic": false
+        },
+        "owning_module": "Provider",
+        "primary_template": {
+          "exported": true,
+          "implicit": false,
+          "kind": "FunctionTemplate",
+          "normalized": {
+            "attributes": [],
+            "kind": "FunctionTemplate",
+            "owning_module": "Provider",
+            "qualified_name": "inspect",
+            "template_parameters": [
+              {
+                "has_default": false,
+                "kind": "TemplateTypeParm",
+                "name": "T",
+                "pack": false
+              },
+              {
+                "has_default": true,
+                "kind": "TemplateTypeParm",
+                "name": "",
+                "pack": false
+              }
+            ],
+            "templated_declaration": "usr:c:@FT@>2#T#Tinspect#&1t0.0#L#"
+          },
+          "owning_module": "Provider",
+          "qualified_name": "inspect",
+          "stable_id": "usr:c:@FT@>2#T#Tinspect#&1t0.0#L#",
+          "structural_key": "Provider|FunctionTemplate|inspect|long (const type-parameter-0-0 &)|2|",
+          "usr": "c:@FT@>2#T#Tinspect#&1t0.0#L#"
+        },
+        "qualified_name": "inspect",
+        "stable_id": "usr:c:@F@inspect<#$@S@Item#L>#&1S0_#",
+        "structural_key": "Provider|Function|inspect|long (const struct Item &)|0|",
+        "usr": "c:@F@inspect<#$@S@Item#L>#&1S0_#"
+      }
+    }
+  ],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/templates_constraints/sfinae_becomes_viable/after/consumer.cpp",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": [
+    {
+      "declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "FunctionTemplate",
+        "normalized": {
+          "attributes": [],
+          "kind": "FunctionTemplate",
+          "owning_module": "Provider",
+          "qualified_name": "inspect",
+          "template_parameters": [
+            {
+              "has_default": false,
+              "kind": "TemplateTypeParm",
+              "name": "T",
+              "pack": false
+            },
+            {
+              "has_default": true,
+              "kind": "TemplateTypeParm",
+              "name": "",
+              "pack": false
+            }
+          ],
+          "templated_declaration": "usr:c:@FT@>2#T#Tinspect#&1t0.0#L#"
+        },
+        "owning_module": "Provider",
+        "qualified_name": "inspect",
+        "stable_id": "usr:c:@FT@>2#T#Tinspect#&1t0.0#L#",
+        "structural_key": "Provider|FunctionTemplate|inspect|long (const type-parameter-0-0 &)|2|",
+        "usr": "c:@FT@>2#T#Tinspect#&1t0.0#L#"
+      },
+      "identity": "usr:c:@FT@>2#T#Tinspect#&1t0.0#L#",
+      "locations": [
+        {
+          "column": 63,
+          "file": "consumer.cpp",
+          "line": 5
+        },
+        {
+          "column": 63,
+          "file": "consumer.cpp",
+          "line": 5
+        }
+      ],
+      "usage_kinds": [
+        "decl_ref",
+        "direct_callee"
+      ]
+    },
+    {
+      "declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "CXXRecord",
+        "normalized": {
+          "attributes": [],
+          "bases": [],
+          "fields": [],
+          "kind": "CXXRecord",
+          "methods": [],
+          "owning_module": "Provider",
+          "qualified_name": "Item"
+        },
+        "owning_module": "Provider",
+        "qualified_name": "Item",
+        "stable_id": "usr:c:@S@Item",
+        "structural_key": "Provider|CXXRecord|Item||0|",
+        "usr": "c:@S@Item"
+      },
+      "identity": "usr:c:@S@Item",
+      "locations": [
+        {
+          "column": 14,
+          "file": "provider.cppm",
+          "line": 8
+        },
+        {
+          "column": 3,
+          "file": "consumer.cpp",
+          "line": 4
+        },
+        {
+          "column": 8,
+          "file": "consumer.cpp",
+          "line": 4
+        }
+      ],
+      "usage_kinds": [
+        "constructed_type",
+        "type_loc"
+      ]
+    }
+  ]
+}

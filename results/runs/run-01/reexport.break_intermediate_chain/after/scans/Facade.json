@@ -1,0 +1,46 @@
+{
+  "declarations": [
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "Function",
+      "normalized": {
+        "attributes": [],
+        "canonical_type": "int ()",
+        "consteval": false,
+        "constexpr": false,
+        "inline_specified": false,
+        "kind": "Function",
+        "owning_module": "Facade",
+        "parameters": [],
+        "qualified_name": "facade_value",
+        "return_type": "int",
+        "variadic": false
+      },
+      "owning_module": "Facade",
+      "qualified_name": "facade_value",
+      "stable_id": "usr:c:@F@facade_value#",
+      "structural_key": "Facade|Function|facade_value|int ()|0|",
+      "usr": "c:@F@facade_value#"
+    }
+  ],
+  "had_errors": false,
+  "imports": [
+    {
+      "exported": false,
+      "module": "Core"
+    }
+  ],
+  "logical_module": "Facade",
+  "mode": "provider",
+  "probe_request": "",
+  "probes": [],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/reexport_reachability/intermediate_chain/after/facade.cppm",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": []
+}

@@ -1,0 +1,83 @@
+{
+  "compiler_status": {
+    "after": "success",
+    "before": "success"
+  },
+  "completed_at": "2026-08-28T12:10:56+00:00",
+  "criteria": {
+    "full_interface": {
+      "classification": "correct_trigger",
+      "prediction": "changed_or_unknown"
+    },
+    "module": {
+      "classification": "correct_trigger",
+      "prediction": "changed_or_unknown"
+    },
+    "used_declarations": {
+      "classification": "correct_trigger",
+      "prediction": "changed_or_unknown"
+    }
+  },
+  "description": "A new conversion function provides a better second standard conversion sequence.",
+  "family": "adl_conversions",
+  "language_rules": [
+    "over.match.conv",
+    "over.best.ics"
+  ],
+  "mutation": "Add conversion operator long alongside operator int.",
+  "observation": {
+    "after": {
+      "kind": "selected_declaration",
+      "value": {
+        "semantic_discriminators": {
+          "canonical_type": "long () const",
+          "return_type": "long"
+        },
+        "stable_id": "usr:c:@S@Number@F@operator long#1",
+        "structural_key": "Provider|CXXConversion|Number::operator long|long () const|0|"
+      }
+    },
+    "before": {
+      "kind": "selected_declaration",
+      "value": {
+        "semantic_discriminators": {
+          "canonical_type": "int () const",
+          "return_type": "int"
+        },
+        "stable_id": "usr:c:@S@Number@F@operator int#1",
+        "structural_key": "Provider|CXXConversion|Number::operator int|int () const|0|"
+      }
+    },
+    "changed": true,
+    "specification": {
+      "kind": "selected_declaration",
+      "probe_id": "result"
+    }
+  },
+  "prediction_file": "prediction.json",
+  "prediction_sha256": "sha256:67852e3914d83237fbbcdf13a6e81f8cbfb42837652f49273f6f9bda3870d0ca",
+  "prediction_written_before_oracle": true,
+  "scenario_id": "conversion.add_better_conversion_function",
+  "schema_version": 1,
+  "started_at": "2026-08-28T12:10:56+00:00",
+  "status": "completed",
+  "toolchain": {
+    "analyzer": "/workspace/build/manalyzer",
+    "analyzer_clang_major": 22,
+    "analyzer_clang_version_number": "22.1.8",
+    "analyzer_version": "manalyzer 0.4.0\nclang version 22.1.8",
+    "bmi_mode": "full",
+    "clang_major": 22,
+    "clang_version": "clang version 22.1.8\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin",
+    "clang_version_number": "22.1.8",
+    "clangxx": "/usr/bin/clang++",
+    "extra_analyzer_flags": [],
+    "extra_compile_flags": [
+      "-fno-color-diagnostics",
+      "-ferror-limit=0"
+    ],
+    "required_clang_version": "22.1.8",
+    "standard": "c++20",
+    "target": null
+  }
+}

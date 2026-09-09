@@ -1,0 +1,19 @@
+{
+  "clangxx": "/usr/bin/clang++",
+  "clang_version": "clang version 22.1.8\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin",
+  "clang_version_number": "22.1.8",
+  "clang_major": 22,
+  "required_clang_version": "22.1.8",
+  "analyzer": "/workspace/build/manalyzer",
+  "analyzer_version": "manalyzer 0.4.0\nclang version 22.1.8",
+  "analyzer_clang_version_number": "22.1.8",
+  "analyzer_clang_major": 22,
+  "standard": "c++20",
+  "bmi_mode": "full",
+  "target": null,
+  "extra_compile_flags": [
+    "-fno-color-diagnostics",
+    "-ferror-limit=0"
+  ],
+  "extra_analyzer_flags": []
+}

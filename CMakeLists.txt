@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.20)
 project(
     module_declaration_dependency_analysis
     VERSION 0.4.0
-    DESCRIPTION "Experimental analysis of declaration dependencies in C++20 modules"
+    DESCRIPTION "Experimental analysis of declaration dependencies in modules"
     LANGUAGES C CXX
 )
 

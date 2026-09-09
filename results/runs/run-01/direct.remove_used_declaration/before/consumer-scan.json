@@ -1,0 +1,65 @@
+{
+  "declarations": [],
+  "had_errors": false,
+  "imports": [],
+  "logical_module": "",
+  "mode": "consumer",
+  "probe_request": "",
+  "probes": [],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/direct_and_controls/remove_used/before/consumer.cpp",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": [
+    {
+      "declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "Function",
+        "normalized": {
+          "attributes": [],
+          "canonical_type": "int (int)",
+          "consteval": false,
+          "constexpr": false,
+          "inline_specified": false,
+          "kind": "Function",
+          "owning_module": "Provider",
+          "parameters": [
+            {
+              "pack": false,
+              "type": "int"
+            }
+          ],
+          "qualified_name": "alive",
+          "return_type": "int",
+          "variadic": false
+        },
+        "owning_module": "Provider",
+        "qualified_name": "alive",
+        "stable_id": "usr:c:@F@alive#I#",
+        "structural_key": "Provider|Function|alive|int (int)|0|",
+        "usr": "c:@F@alive#I#"
+      },
+      "identity": "usr:c:@F@alive#I#",
+      "locations": [
+        {
+          "column": 21,
+          "file": "consumer.cpp",
+          "line": 3
+        },
+        {
+          "column": 21,
+          "file": "consumer.cpp",
+          "line": 3
+        }
+      ],
+      "usage_kinds": [
+        "decl_ref",
+        "direct_callee"
+      ]
+    }
+  ]
+}

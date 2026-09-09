@@ -30,7 +30,7 @@ flowchart TD
     P0["Provider state S0"] --> B0["Fresh BMI and provider scan"]
     C0["Consumer with S0"] --> U0["Uses U0 and outcome O0"]
     P1["Provider state S1"] --> B1["Fresh BMI and provider scan"]
-    B0 --> PR["Two baselines and C_used"]
+    B0 --> PR["Criteria evaluation"]
     U0 --> PR
     B1 --> PR
     PR --> F["prediction.json written and hashed"]
@@ -63,8 +63,10 @@ instantiated Clang USRs coincide but whose signatures or constraints differ.
 
 - `manifest`: scenario loading and semantic validation;
 - `build`: explicit BMI commands and isolated module caches;
-- `matching`: collision-aware USR, structural, and normalized matching;
-- `criteria`: two baselines and the evaluated `C_used` criterion;
+- `matching`: collision-aware USR and structural matching followed by a
+  semantic-fingerprint precheck and collision-safe normalized comparison;
+- `criteria`: two baselines and the evaluated
+  <i>C</i><sub>used</sub> criterion;
 - `outcome`: typed semantic observations and composite selection identities;
 - `pipeline`: prediction/reference ordering and typed failure handling;
 - `aggregate`: JSONL, semicolon-delimited CSV, Markdown, and rates with
@@ -78,9 +80,9 @@ Each provider scan records direct exported declarations and import edges. The
 Python layer recursively follows only edges marked as exported. Loading a BMI
 alone does not make its declarations reachable to a consumer.
 
-For `C_used`, matching intentionally searches all tracked provider modules,
-not only the new reachable surface. This design exposes cases where pure
-used-declaration equality misses a change in re-export reachability.
+For <i>C</i><sub>used</sub>, matching intentionally searches all tracked provider
+modules, not only the new reachable surface. This design exposes cases where
+pure used-declaration equality misses a change in re-export reachability.
 
 ## Probe contract
 
@@ -94,3 +96,17 @@ Consumer variables are marked with:
 declaration, selected class-template specialization when available, and a
 constant value when evaluable. The scenario manifest chooses one primary
 observation from that record.
+
+## Artifact layout
+
+For each scenario, the orchestrator keeps isolated provider scans, consumer
+scans, compiler commands, standard streams, and the two public result files:
+
+- `prediction.json` contains criterion predictions written before the
+  after-consumer is analysed;
+- `result.json` contains the completed observation comparison and prediction
+  classifications.
+
+The formats exchanged by stable project boundaries are versioned. Their
+public portions are described by `schemas/analyzer-output.schema.json`,
+`schemas/scenario.schema.json`, and `schemas/result.schema.json`.

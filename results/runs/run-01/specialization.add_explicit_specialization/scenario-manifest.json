@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "specialization.add_explicit_specialization",
+  "family": "specializations_guides",
+  "description": "A newly added explicit specialization changes the selected class definition and member return type.",
+  "language_rules": ["temp.expl.spec", "temp.spec"],
+  "mutation": "Add an explicit specialization for Value<int>.",
+  "primary_module": "Provider",
+  "tracked_modules": ["Provider"],
+  "observation": { "kind": "expression_type", "probe_id": "result" },
+  "states": {
+    "before": { "modules": [{ "name": "Provider", "source": "before/provider.cppm", "imports": [] }], "consumer": "before/consumer.cpp" },
+    "after": { "modules": [{ "name": "Provider", "source": "after/provider.cppm", "imports": [] }], "consumer": "after/consumer.cpp" }
+  }
+}
+

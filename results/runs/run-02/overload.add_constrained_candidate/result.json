@@ -1,0 +1,94 @@
+{
+  "compiler_status": {
+    "after": "success",
+    "before": "success"
+  },
+  "completed_at": "2026-08-28T12:11:02+00:00",
+  "criteria": {
+    "full_interface": {
+      "classification": "correct_trigger",
+      "prediction": "changed_or_unknown"
+    },
+    "module": {
+      "classification": "correct_trigger",
+      "prediction": "changed_or_unknown"
+    },
+    "used_declarations": {
+      "classification": "unsafe_skip",
+      "prediction": "unchanged"
+    }
+  },
+  "description": "A newly added constrained overload is more specialized for the unchanged argument.",
+  "family": "lookup_overload",
+  "language_rules": [
+    "temp.constr.order",
+    "over.match.best.general"
+  ],
+  "mutation": "Add an overload constrained to four-byte types.",
+  "observation": {
+    "after": {
+      "kind": "selected_declaration",
+      "value": {
+        "primary_template": {
+          "semantic_discriminators": {
+            "template_requires": "(sizeof(type-parameter-0-0) == 4)"
+          },
+          "stable_id": "usr:c:@FT@>1#Trank#t0.0#L#",
+          "structural_key": "Provider|FunctionTemplate|rank|long (type-parameter-0-0)|1|(sizeof(type-parameter-0-0) == 4)"
+        },
+        "semantic_discriminators": {
+          "canonical_type": "long (int)",
+          "return_type": "long"
+        },
+        "stable_id": "usr:c:@F@rank<#I>#I#",
+        "structural_key": "Provider|Function|rank|long (int)|0|"
+      }
+    },
+    "before": {
+      "kind": "selected_declaration",
+      "value": {
+        "primary_template": {
+          "stable_id": "usr:c:@FT@>1#Trank#t0.0#I#",
+          "structural_key": "Provider|FunctionTemplate|rank|int (type-parameter-0-0)|1|"
+        },
+        "semantic_discriminators": {
+          "canonical_type": "int (int)",
+          "return_type": "int"
+        },
+        "stable_id": "usr:c:@F@rank<#I>#I#",
+        "structural_key": "Provider|Function|rank|int (int)|0|"
+      }
+    },
+    "changed": true,
+    "specification": {
+      "kind": "selected_declaration",
+      "probe_id": "result"
+    }
+  },
+  "prediction_file": "prediction.json",
+  "prediction_sha256": "sha256:9a346dad55545fbf8ca9c88c45807f05473f0654d74d35e906432ea1487e66f7",
+  "prediction_written_before_oracle": true,
+  "scenario_id": "overload.add_constrained_candidate",
+  "schema_version": 1,
+  "started_at": "2026-08-28T12:11:01+00:00",
+  "status": "completed",
+  "toolchain": {
+    "analyzer": "/workspace/build/manalyzer",
+    "analyzer_clang_major": 22,
+    "analyzer_clang_version_number": "22.1.8",
+    "analyzer_version": "manalyzer 0.4.0\nclang version 22.1.8",
+    "bmi_mode": "full",
+    "clang_major": 22,
+    "clang_version": "clang version 22.1.8\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin",
+    "clang_version_number": "22.1.8",
+    "clangxx": "/usr/bin/clang++",
+    "extra_analyzer_flags": [],
+    "extra_compile_flags": [
+      "-fno-color-diagnostics",
+      "-ferror-limit=0"
+    ],
+    "required_clang_version": "22.1.8",
+    "standard": "c++20",
+    "target": null
+  }
+}

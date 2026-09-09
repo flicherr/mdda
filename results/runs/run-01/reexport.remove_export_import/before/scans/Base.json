@@ -1,0 +1,46 @@
+{
+  "declarations": [
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "Function",
+      "normalized": {
+        "attributes": [],
+        "canonical_type": "int (int)",
+        "consteval": false,
+        "constexpr": false,
+        "inline_specified": false,
+        "kind": "Function",
+        "owning_module": "Base",
+        "parameters": [
+          {
+            "pack": false,
+            "type": "int"
+          }
+        ],
+        "qualified_name": "helper",
+        "return_type": "int",
+        "variadic": false
+      },
+      "owning_module": "Base",
+      "qualified_name": "helper",
+      "stable_id": "usr:c:@F@helper#I#",
+      "structural_key": "Base|Function|helper|int (int)|0|",
+      "usr": "c:@F@helper#I#"
+    }
+  ],
+  "had_errors": false,
+  "imports": [],
+  "logical_module": "Base",
+  "mode": "provider",
+  "probe_request": "",
+  "probes": [],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/reexport_reachability/remove_export_import/before/base.cppm",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": []
+}

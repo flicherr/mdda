@@ -1,0 +1,108 @@
+{
+  "declarations": [],
+  "had_errors": false,
+  "imports": [],
+  "logical_module": "",
+  "mode": "consumer",
+  "probe_request": "result",
+  "probes": [
+    {
+      "constant_value": false,
+      "deduced_type": "const bool",
+      "expression": "Fits<struct Wide>",
+      "expression_type": "bool",
+      "id": "result",
+      "location": {
+        "column": 64,
+        "file": "consumer.cpp",
+        "line": 4
+      }
+    }
+  ],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/templates_constraints/concept_satisfaction/before/consumer.cpp",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": [
+    {
+      "declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "Concept",
+        "normalized": {
+          "attributes": [],
+          "constraint_expression": "(sizeof(type-parameter-0-0) <= 4)",
+          "kind": "Concept",
+          "owning_module": "Provider",
+          "qualified_name": "Fits",
+          "template_parameters": [
+            {
+              "has_default": false,
+              "kind": "TemplateTypeParm",
+              "name": "T",
+              "pack": false
+            }
+          ]
+        },
+        "owning_module": "Provider",
+        "qualified_name": "Fits",
+        "stable_id": "usr:c:@CT@Fits",
+        "structural_key": "Provider|Concept|Fits||1|",
+        "usr": "c:@CT@Fits"
+      },
+      "identity": "usr:c:@CT@Fits",
+      "locations": [
+        {
+          "column": 73,
+          "file": "consumer.cpp",
+          "line": 4
+        }
+      ],
+      "usage_kinds": [
+        "concept_specialization"
+      ]
+    },
+    {
+      "declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "CXXRecord",
+        "normalized": {
+          "attributes": [],
+          "bases": [],
+          "fields": [
+            {
+              "access": 0,
+              "mutable": false,
+              "name": "bytes",
+              "type": "char[8]"
+            }
+          ],
+          "kind": "CXXRecord",
+          "methods": [],
+          "owning_module": "Provider",
+          "qualified_name": "Wide"
+        },
+        "owning_module": "Provider",
+        "qualified_name": "Wide",
+        "stable_id": "usr:c:@S@Wide",
+        "structural_key": "Provider|CXXRecord|Wide||0|",
+        "usr": "c:@S@Wide"
+      },
+      "identity": "usr:c:@S@Wide",
+      "locations": [
+        {
+          "column": 78,
+          "file": "consumer.cpp",
+          "line": 4
+        }
+      ],
+      "usage_kinds": [
+        "type_loc"
+      ]
+    }
+  ]
+}

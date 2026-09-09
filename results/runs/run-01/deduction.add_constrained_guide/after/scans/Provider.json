@@ -1,0 +1,210 @@
+{
+  "declarations": [
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "FunctionTemplate",
+      "normalized": {
+        "attributes": [],
+        "kind": "FunctionTemplate",
+        "owning_module": "Provider",
+        "qualified_name": "<deduction guide for Holder>",
+        "template_parameters": [
+          {
+            "has_default": false,
+            "kind": "TemplateTypeParm",
+            "name": "T",
+            "pack": false
+          }
+        ],
+        "template_requires": "(sizeof(type-parameter-0-0) == 1)",
+        "templated_declaration": "usr:c:@FT@>1#T<deduction guide for Holder>#t0.0#$@S@Holder>#I#"
+      },
+      "owning_module": "Provider",
+      "qualified_name": "<deduction guide for Holder>",
+      "stable_id": "usr:c:@FT@>1#T<deduction guide for Holder>#t0.0#$@S@Holder>#I#",
+      "structural_key": "Provider|FunctionTemplate|<deduction guide for Holder>|struct Holder<int> (type-parameter-0-0)|1|(sizeof(type-parameter-0-0) == 1)",
+      "usr": "c:@FT@>1#T<deduction guide for Holder>#t0.0#$@S@Holder>#I#"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "CXXDeductionGuide",
+      "normalized": {
+        "attributes": [],
+        "canonical_type": "struct Holder<int> (type-parameter-0-0)",
+        "consteval": false,
+        "constexpr": false,
+        "deduced_template": "usr:c:@ST>1#T@Holder",
+        "explicit": false,
+        "inline_specified": false,
+        "kind": "CXXDeductionGuide",
+        "owning_module": "Provider",
+        "parameters": [
+          {
+            "pack": false,
+            "type": "type-parameter-0-0"
+          }
+        ],
+        "qualified_name": "<deduction guide for Holder>",
+        "return_type": "struct Holder<int>",
+        "variadic": false
+      },
+      "owning_module": "Provider",
+      "qualified_name": "<deduction guide for Holder>",
+      "stable_id": "usr:c:@FT@>1#T<deduction guide for Holder>#t0.0#$@S@Holder>#I#",
+      "structural_key": "Provider|CXXDeductionGuide|<deduction guide for Holder>|struct Holder<int> (type-parameter-0-0)|0|",
+      "usr": "c:@FT@>1#T<deduction guide for Holder>#t0.0#$@S@Holder>#I#"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "FunctionTemplate",
+      "normalized": {
+        "attributes": [],
+        "kind": "FunctionTemplate",
+        "owning_module": "Provider",
+        "qualified_name": "<deduction guide for Holder>",
+        "template_parameters": [
+          {
+            "has_default": false,
+            "kind": "TemplateTypeParm",
+            "name": "T",
+            "pack": false
+          }
+        ],
+        "templated_declaration": "usr:c:@FT@>1#T<deduction guide for Holder>#t0.0#>@ST>1#T@Holder1S0_#"
+      },
+      "owning_module": "Provider",
+      "qualified_name": "<deduction guide for Holder>",
+      "stable_id": "usr:c:@FT@>1#T<deduction guide for Holder>#t0.0#>@ST>1#T@Holder1S0_#",
+      "structural_key": "Provider|FunctionTemplate|<deduction guide for Holder>|Holder<type-parameter-0-0> (type-parameter-0-0)|1|",
+      "usr": "c:@FT@>1#T<deduction guide for Holder>#t0.0#>@ST>1#T@Holder1S0_#"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "CXXDeductionGuide",
+      "normalized": {
+        "attributes": [],
+        "canonical_type": "Holder<type-parameter-0-0> (type-parameter-0-0)",
+        "consteval": false,
+        "constexpr": false,
+        "deduced_template": "usr:c:@ST>1#T@Holder",
+        "explicit": false,
+        "inline_specified": false,
+        "kind": "CXXDeductionGuide",
+        "owning_module": "Provider",
+        "parameters": [
+          {
+            "pack": false,
+            "type": "type-parameter-0-0"
+          }
+        ],
+        "qualified_name": "<deduction guide for Holder>",
+        "return_type": "Holder<type-parameter-0-0>",
+        "variadic": false
+      },
+      "owning_module": "Provider",
+      "qualified_name": "<deduction guide for Holder>",
+      "stable_id": "usr:c:@FT@>1#T<deduction guide for Holder>#t0.0#>@ST>1#T@Holder1S0_#",
+      "structural_key": "Provider|CXXDeductionGuide|<deduction guide for Holder>|Holder<type-parameter-0-0> (type-parameter-0-0)|0|",
+      "usr": "c:@FT@>1#T<deduction guide for Holder>#t0.0#>@ST>1#T@Holder1S0_#"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "ClassTemplateSpecialization",
+      "normalized": {
+        "attributes": [],
+        "kind": "ClassTemplateSpecialization",
+        "owning_module": "Provider",
+        "qualified_name": "Holder",
+        "template_arguments": [
+          "int"
+        ]
+      },
+      "owning_module": "Provider",
+      "qualified_name": "Holder",
+      "stable_id": "usr:c:@S@Holder>#I",
+      "structural_key": "Provider|ClassTemplateSpecialization|Holder||0|",
+      "usr": "c:@S@Holder>#I"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "ClassTemplate",
+      "normalized": {
+        "attributes": [],
+        "bases": [],
+        "fields": [],
+        "kind": "ClassTemplate",
+        "methods": [
+          {
+            "name": "Holder<T>",
+            "static": false,
+            "type": "void (type-parameter-0-0)",
+            "virtual": false
+          }
+        ],
+        "owning_module": "Provider",
+        "qualified_name": "Holder",
+        "template_parameters": [
+          {
+            "has_default": false,
+            "kind": "TemplateTypeParm",
+            "name": "T",
+            "pack": false
+          }
+        ]
+      },
+      "owning_module": "Provider",
+      "qualified_name": "Holder",
+      "stable_id": "usr:c:@ST>1#T@Holder",
+      "structural_key": "Provider|ClassTemplate|Holder||1|",
+      "usr": "c:@ST>1#T@Holder"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "CXXConstructor",
+      "normalized": {
+        "attributes": [],
+        "canonical_type": "void (type-parameter-0-0)",
+        "consteval": false,
+        "constexpr": false,
+        "inline_specified": false,
+        "kind": "CXXConstructor",
+        "owning_module": "Provider",
+        "parameters": [
+          {
+            "pack": false,
+            "type": "type-parameter-0-0"
+          }
+        ],
+        "qualified_name": "Holder::Holder<T>",
+        "return_type": "void",
+        "variadic": false
+      },
+      "owning_module": "Provider",
+      "qualified_name": "Holder::Holder<T>",
+      "stable_id": "usr:c:@ST>1#T@Holder@F@Holder#t0.0#",
+      "structural_key": "Provider|CXXConstructor|Holder::Holder<T>|void (type-parameter-0-0)|0|",
+      "usr": "c:@ST>1#T@Holder@F@Holder#t0.0#"
+    }
+  ],
+  "had_errors": false,
+  "imports": [],
+  "logical_module": "Provider",
+  "mode": "provider",
+  "probe_request": "",
+  "probes": [],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/specializations_guides/constrained_deduction_guide/after/provider.cppm",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": []
+}

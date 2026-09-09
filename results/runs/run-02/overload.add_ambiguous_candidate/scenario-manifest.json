@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "overload.add_ambiguous_candidate",
+  "family": "lookup_overload",
+  "description": "A new overload makes the previously valid call ambiguous.",
+  "language_rules": ["over.match", "over.best.ics"],
+  "mutation": "Add an overload with an indistinguishable standard conversion rank.",
+  "primary_module": "Provider",
+  "tracked_modules": ["Provider"],
+  "observation": { "kind": "compile_status", "probe_id": null },
+  "states": {
+    "before": { "modules": [{ "name": "Provider", "source": "before/provider.cppm", "imports": [] }], "consumer": "before/consumer.cpp" },
+    "after": { "modules": [{ "name": "Provider", "source": "after/provider.cppm", "imports": [] }], "consumer": "after/consumer.cpp" }
+  }
+}
+

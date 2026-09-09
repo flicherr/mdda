@@ -1,0 +1,46 @@
+{
+  "criteria": {
+    "full_interface": {
+      "added": [
+        "usr:c:@F@pick#I#"
+      ],
+      "after_count": 2,
+      "before_count": 1,
+      "modified": [],
+      "prediction": "changed_or_unknown",
+      "removed": []
+    },
+    "module": {
+      "after_hashes": {
+        "Provider": "sha256:84583205f871abe279b727fb16f3b08954dc4c540a6573d20367a39798a5dba6"
+      },
+      "before_hashes": {
+        "Provider": "sha256:5e57d818bffaa5761d91118a7ccc099c2ad0465699b5b87486cc928b3fe5c6fa"
+      },
+      "changed_modules": [
+        "Provider"
+      ],
+      "prediction": "changed_or_unknown"
+    },
+    "used_declarations": {
+      "details": [
+        {
+          "after_fingerprint": "sha256:9211878f412adf79359a3cc72cd6d7730266dc7e9554dee33c9dfcd8e1ec0e42",
+          "before_fingerprint": "sha256:9211878f412adf79359a3cc72cd6d7730266dc7e9554dee33c9dfcd8e1ec0e42",
+          "equal": true,
+          "fingerprints_equal": true,
+          "identity": "usr:c:@F@pick#L#",
+          "match_method": "stable_id",
+          "match_status": "matched",
+          "normalized_comparison_performed": true
+        }
+      ],
+      "prediction": "unchanged",
+      "used_declaration_count": 1
+    }
+  },
+  "oracle_fields_available": false,
+  "scenario_id": "overload.add_better_candidate",
+  "schema_version": 1,
+  "written_at": "2026-08-28T12:10:46+00:00"
+}

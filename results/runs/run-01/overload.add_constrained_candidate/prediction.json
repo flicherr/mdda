@@ -1,0 +1,46 @@
+{
+  "criteria": {
+    "full_interface": {
+      "added": [
+        "usr:c:@FT@>1#Trank#t0.0#L#"
+      ],
+      "after_count": 4,
+      "before_count": 2,
+      "modified": [],
+      "prediction": "changed_or_unknown",
+      "removed": []
+    },
+    "module": {
+      "after_hashes": {
+        "Provider": "sha256:78e8f88b83e677fc7146f65ea51b15de6267afc2e1ea9ad2e542ccd9f4b953b1"
+      },
+      "before_hashes": {
+        "Provider": "sha256:463b2ce672d7b88dba2ca9b7231ee7d1c95562ceaf2a692d4900c60e4f69d0be"
+      },
+      "changed_modules": [
+        "Provider"
+      ],
+      "prediction": "changed_or_unknown"
+    },
+    "used_declarations": {
+      "details": [
+        {
+          "after_fingerprint": "sha256:a31f987ac8efac735db135a2ad9c220fb0de1d028b45511b543032ec8540c184",
+          "before_fingerprint": "sha256:a31f987ac8efac735db135a2ad9c220fb0de1d028b45511b543032ec8540c184",
+          "equal": true,
+          "fingerprints_equal": true,
+          "identity": "usr:c:@FT@>1#Trank#t0.0#I#",
+          "match_method": "stable_id+structural_key",
+          "match_status": "matched",
+          "normalized_comparison_performed": true
+        }
+      ],
+      "prediction": "unchanged",
+      "used_declaration_count": 1
+    }
+  },
+  "oracle_fields_available": false,
+  "scenario_id": "overload.add_constrained_candidate",
+  "schema_version": 1,
+  "written_at": "2026-08-28T12:10:47+00:00"
+}

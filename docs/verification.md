@@ -16,7 +16,8 @@ issues that invalidate the supplied publication matrix:
    the old code produced a false `outcome_changed=false`;
 2. consumer scans materialized implicit constructors absent from provider
    scans; those constructors appeared as missing dependencies and also changed
-   normalized class records, producing artificial `C_used` triggers.
+   normalized class records, producing artificial
+   <i>C</i><sub>used</sub> triggers.
 
 The affected constrained scenarios are:
 
@@ -39,14 +40,14 @@ files, so it could not rebuild the C++ executable.
 
 For the renamed source revision:
 
-- all 28 Python unit tests pass;
+- all 31 Python unit tests pass;
 - `orchestrator validate` accepts all 28 scenarios and reports the expected six
   families;
 - the root `pyproject.toml` builds a wheel containing `orchestrator`, and the
   installed console entry point validates the corpus;
 - the generated `results.csv` regression test verifies a semicolon delimiter;
 - Makefile dry runs configure the root CMake project and preserve the documented
-  `analyzer/build/manalyzer` path.
+  `build/manalyzer` path.
 
 The verification workspace did not provide CMake or LLVM/Clang 22.1.8
 development files, so the renamed C++ target still requires a clean build on
@@ -63,9 +64,17 @@ associated experiment log:
 - Python test and manifest-validation results;
 - 28/28 scenario completion and one prediction per scenario in both runs;
 - deterministic comparison output;
-- reviewed final matrix for both baselines and `C_used`;
+- reviewed final matrix for both baselines and <i>C</i><sub>used</sub>;
 - confirmation that `results.csv` is semicolon-delimited.
 
-No final reference matrix is embedded in this revision because the supplied
-raw runs were produced before the semantic fixes and before the executable and
-orchestrator renaming.
+## Current container verification
+
+The current Docker image has subsequently been built and the complete
+two-run protocol has been executed successfully through Docker Desktop. The
+new scenario-level observations and aggregate result matrix match the retained
+reference results. This removes the earlier concern that the article text
+might describe outputs of an obsolete implementation revision.
+
+Raw runs remain external experimental artifacts rather than version-controlled
+source files. Before publication, preserve the two run directories, generated
+publication directory, source revision, and article revision in one archive.

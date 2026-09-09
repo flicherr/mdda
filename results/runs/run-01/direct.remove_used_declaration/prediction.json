@@ -1,0 +1,43 @@
+{
+  "criteria": {
+    "full_interface": {
+      "added": [
+        "usr:c:@F@replacement#I#"
+      ],
+      "after_count": 1,
+      "before_count": 1,
+      "modified": [],
+      "prediction": "changed_or_unknown",
+      "removed": [
+        "usr:c:@F@alive#I#"
+      ]
+    },
+    "module": {
+      "after_hashes": {
+        "Provider": "sha256:727745b029d81aebd73a578f1710f22a2047f8894f40d3bf40e1b6676aa8b6e2"
+      },
+      "before_hashes": {
+        "Provider": "sha256:b42f55672a408b8997315a552955b42b6f6040b6101763cce52fca54528364a8"
+      },
+      "changed_modules": [
+        "Provider"
+      ],
+      "prediction": "changed_or_unknown"
+    },
+    "used_declarations": {
+      "details": [
+        {
+          "identity": "usr:c:@F@alive#I#",
+          "match_method": null,
+          "match_status": "missing"
+        }
+      ],
+      "prediction": "changed_or_unknown",
+      "used_declaration_count": 1
+    }
+  },
+  "oracle_fields_available": false,
+  "scenario_id": "direct.remove_used_declaration",
+  "schema_version": 1,
+  "written_at": "2026-08-28T12:10:45+00:00"
+}

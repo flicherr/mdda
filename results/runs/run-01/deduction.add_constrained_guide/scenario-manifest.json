@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "deduction.add_constrained_guide",
+  "family": "specializations_guides",
+  "description": "A newly added constrained guide is preferred for a one-byte argument and changes the deduced type.",
+  "language_rules": ["over.match.class.deduct", "temp.constr.order"],
+  "mutation": "Add a constrained Holder(T) -> Holder<int> deduction guide.",
+  "primary_module": "Provider",
+  "tracked_modules": ["Provider"],
+  "observation": { "kind": "deduced_type", "probe_id": "result" },
+  "states": {
+    "before": { "modules": [{ "name": "Provider", "source": "before/provider.cppm", "imports": [] }], "consumer": "before/consumer.cpp" },
+    "after": { "modules": [{ "name": "Provider", "source": "after/provider.cppm", "imports": [] }], "consumer": "after/consumer.cpp" }
+  }
+}
+

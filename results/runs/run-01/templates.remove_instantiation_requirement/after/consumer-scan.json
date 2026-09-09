@@ -1,0 +1,50 @@
+{
+  "declarations": [],
+  "had_errors": true,
+  "imports": [],
+  "logical_module": "",
+  "mode": "consumer",
+  "probe_request": "",
+  "probes": [],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/templates_constraints/instantiation_viability/after/consumer.cpp",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": [
+    {
+      "declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "CXXRecord",
+        "normalized": {
+          "attributes": [],
+          "bases": [],
+          "fields": [],
+          "kind": "CXXRecord",
+          "methods": [],
+          "owning_module": "Provider",
+          "qualified_name": "Source"
+        },
+        "owning_module": "Provider",
+        "qualified_name": "Source",
+        "stable_id": "usr:c:@S@Source",
+        "structural_key": "Provider|CXXRecord|Source||0|",
+        "usr": "c:@S@Source"
+      },
+      "identity": "usr:c:@S@Source",
+      "locations": [
+        {
+          "column": 25,
+          "file": "consumer.cpp",
+          "line": 4
+        }
+      ],
+      "usage_kinds": [
+        "type_loc"
+      ]
+    }
+  ]
+}

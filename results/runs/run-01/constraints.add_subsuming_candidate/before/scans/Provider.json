@@ -1,0 +1,141 @@
+{
+  "declarations": [
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "Concept",
+      "normalized": {
+        "attributes": [],
+        "constraint_expression": "true",
+        "kind": "Concept",
+        "owning_module": "Provider",
+        "qualified_name": "AnyType",
+        "template_parameters": [
+          {
+            "has_default": false,
+            "kind": "TemplateTypeParm",
+            "name": "T",
+            "pack": false
+          }
+        ]
+      },
+      "owning_module": "Provider",
+      "qualified_name": "AnyType",
+      "stable_id": "usr:c:@CT@AnyType",
+      "structural_key": "Provider|Concept|AnyType||1|",
+      "usr": "c:@CT@AnyType"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "FunctionTemplate",
+      "normalized": {
+        "attributes": [],
+        "kind": "FunctionTemplate",
+        "owning_module": "Provider",
+        "qualified_name": "order",
+        "template_parameters": [
+          {
+            "has_default": false,
+            "kind": "TemplateTypeParm",
+            "name": "T",
+            "pack": false
+          }
+        ],
+        "template_requires": "AnyType<type-parameter-0-0>",
+        "templated_declaration": "usr:c:@FT@>1#Torder#*t0.0#I#"
+      },
+      "owning_module": "Provider",
+      "qualified_name": "order",
+      "stable_id": "usr:c:@FT@>1#Torder#*t0.0#I#",
+      "structural_key": "Provider|FunctionTemplate|order|int (type-parameter-0-0 *)|1|AnyType<type-parameter-0-0>",
+      "usr": "c:@FT@>1#Torder#*t0.0#I#"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "Function",
+      "normalized": {
+        "attributes": [],
+        "body": "{ return sizeof (*value); }",
+        "canonical_type": "int (type-parameter-0-0 *)",
+        "consteval": false,
+        "constexpr": false,
+        "inline_specified": false,
+        "kind": "Function",
+        "owning_module": "Provider",
+        "parameters": [
+          {
+            "pack": false,
+            "type": "type-parameter-0-0 *"
+          }
+        ],
+        "qualified_name": "order",
+        "return_type": "int",
+        "variadic": false
+      },
+      "owning_module": "Provider",
+      "qualified_name": "order",
+      "stable_id": "usr:c:@FT@>1#Torder#*t0.0#I#",
+      "structural_key": "Provider|Function|order|int (type-parameter-0-0 *)|0|",
+      "usr": "c:@FT@>1#Torder#*t0.0#I#"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "CXXRecord",
+      "normalized": {
+        "attributes": [],
+        "bases": [],
+        "fields": [
+          {
+            "access": 0,
+            "mutable": false,
+            "name": "bytes",
+            "type": "char[4]"
+          }
+        ],
+        "kind": "CXXRecord",
+        "methods": [],
+        "owning_module": "Provider",
+        "qualified_name": "Four"
+      },
+      "owning_module": "Provider",
+      "qualified_name": "Four",
+      "stable_id": "usr:c:@S@Four",
+      "structural_key": "Provider|CXXRecord|Four||0|",
+      "usr": "c:@S@Four"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "Field",
+      "normalized": {
+        "attributes": [],
+        "canonical_type": "char[4]",
+        "kind": "Field",
+        "owning_module": "Provider",
+        "qualified_name": "Four::bytes"
+      },
+      "owning_module": "Provider",
+      "qualified_name": "Four::bytes",
+      "stable_id": "usr:c:@S@Four@FI@bytes",
+      "structural_key": "Provider|Field|Four::bytes|char[4]|0|",
+      "usr": "c:@S@Four@FI@bytes"
+    }
+  ],
+  "had_errors": false,
+  "imports": [],
+  "logical_module": "Provider",
+  "mode": "provider",
+  "probe_request": "",
+  "probes": [],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/templates_constraints/constraint_partial_ordering/before/provider.cppm",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": []
+}

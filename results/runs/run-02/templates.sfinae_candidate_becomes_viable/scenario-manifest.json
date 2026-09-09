@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "templates.sfinae_candidate_becomes_viable",
+  "family": "templates_constraints",
+  "description": "A previously substituted-away function template becomes viable after the argument type gains a nested type.",
+  "language_rules": ["temp.deduct", "temp.deduct.general", "over.match.best.general"],
+  "mutation": "Add nested type tag to the exported argument type.",
+  "primary_module": "Provider",
+  "tracked_modules": ["Provider"],
+  "observation": { "kind": "selected_declaration", "probe_id": "result" },
+  "states": {
+    "before": { "modules": [{ "name": "Provider", "source": "before/provider.cppm", "imports": [] }], "consumer": "before/consumer.cpp" },
+    "after": { "modules": [{ "name": "Provider", "source": "after/provider.cppm", "imports": [] }], "consumer": "after/consumer.cpp" }
+  }
+}
+

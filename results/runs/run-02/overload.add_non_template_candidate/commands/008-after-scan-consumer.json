@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "/workspace/build/manalyzer",
+    "--mode=consumer",
+    "--output=/workspace/results/runs/run-02/overload.add_non_template_candidate/after/consumer-scan.json",
+    "--probe-id=result",
+    "--tracked-module=Provider",
+    "/workspace/scenarios/lookup_overload/non_template_preference/after/consumer.cpp",
+    "--",
+    "-std=c++20",
+    "-fmodules-cache-path=/workspace/results/runs/run-02/overload.add_non_template_candidate/after/module-cache",
+    "-fno-modules-reduced-bmi",
+    "-fno-color-diagnostics",
+    "-ferror-limit=0",
+    "-fmodule-file=Provider=/workspace/results/runs/run-02/overload.add_non_template_candidate/after/pcm/Provider.pcm"
+  ],
+  "cwd": "/workspace/results/runs/run-02/overload.add_non_template_candidate/after",
+  "duration_ms": 36,
+  "returncode": 0,
+  "stderr": "warning: argument unused during compilation: '-fmodules-cache-path=/workspace/results/runs/run-02/overload.add_non_template_candidate/after/module-cache' [-Wunused-command-line-argument]\n",
+  "stdout": "",
+  "timed_out": false
+}

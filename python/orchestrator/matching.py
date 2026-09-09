@@ -134,11 +134,24 @@ class DeclarationIndex:
 def compare_declarations(
     previous: dict[str, Any], current: dict[str, Any]
 ) -> dict[str, Any]:
-    previous_normalized = previous.get("normalized", {})
-    current_normalized = current.get("normalized", {})
-    equal = canonical_json(previous_normalized) == canonical_json(current_normalized)
+    previous_with_fingerprint = with_fingerprint(previous)
+    current_with_fingerprint = with_fingerprint(current)
+    previous_fingerprint = previous_with_fingerprint["fingerprint"]
+    current_fingerprint = current_with_fingerprint["fingerprint"]
+    fingerprints_equal = previous_fingerprint == current_fingerprint
+
+    # A differing SHA-256 value proves that the canonical representations
+    # differ.  Matching hashes are verified against the representations so a
+    # collision can never make two different declarations compare equal.
+    normalized_comparison_performed = fingerprints_equal
+    equal = fingerprints_equal and (
+        canonical_json(previous_with_fingerprint.get("normalized", {}))
+        == canonical_json(current_with_fingerprint.get("normalized", {}))
+    )
     return {
         "equal": equal,
-        "before_fingerprint": stable_hash(previous_normalized),
-        "after_fingerprint": stable_hash(current_normalized),
+        "fingerprints_equal": fingerprints_equal,
+        "normalized_comparison_performed": normalized_comparison_performed,
+        "before_fingerprint": previous_fingerprint,
+        "after_fingerprint": current_fingerprint,
     }

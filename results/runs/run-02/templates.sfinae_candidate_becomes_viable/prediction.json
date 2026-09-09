@@ -1,0 +1,56 @@
+{
+  "criteria": {
+    "full_interface": {
+      "added": [
+        "usr:c:@S@Item@tag"
+      ],
+      "after_count": 5,
+      "before_count": 4,
+      "modified": [],
+      "prediction": "changed_or_unknown",
+      "removed": []
+    },
+    "module": {
+      "after_hashes": {
+        "Provider": "sha256:e43957073b8415d491a6d69a89226ddfdae791635faf5b18d4ee8a4c5f386a26"
+      },
+      "before_hashes": {
+        "Provider": "sha256:85efa49917902c1888317d5f03b584730365a6be447b1a4abb3fc17a924f328a"
+      },
+      "changed_modules": [
+        "Provider"
+      ],
+      "prediction": "changed_or_unknown"
+    },
+    "used_declarations": {
+      "details": [
+        {
+          "after_fingerprint": "sha256:6460ca426bc7941a226218dffb1a83c74c9c0925eef65b25ec40ebe89cdd456b",
+          "before_fingerprint": "sha256:6460ca426bc7941a226218dffb1a83c74c9c0925eef65b25ec40ebe89cdd456b",
+          "equal": true,
+          "fingerprints_equal": true,
+          "identity": "usr:c:@S@Item",
+          "match_method": "stable_id",
+          "match_status": "matched",
+          "normalized_comparison_performed": true
+        },
+        {
+          "after_fingerprint": "sha256:1c963c1d3928dae0f104287859778955d9a8a8eb06ddb270cae1b4c1189d23b3",
+          "before_fingerprint": "sha256:1c963c1d3928dae0f104287859778955d9a8a8eb06ddb270cae1b4c1189d23b3",
+          "equal": true,
+          "fingerprints_equal": true,
+          "identity": "usr:c:@F@inspect.#",
+          "match_method": "stable_id",
+          "match_status": "matched",
+          "normalized_comparison_performed": true
+        }
+      ],
+      "prediction": "unchanged",
+      "used_declaration_count": 2
+    }
+  },
+  "oracle_fields_available": false,
+  "scenario_id": "templates.sfinae_candidate_becomes_viable",
+  "schema_version": 1,
+  "written_at": "2026-08-28T12:11:09+00:00"
+}

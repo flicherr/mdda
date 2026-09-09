@@ -1,0 +1,129 @@
+{
+  "declarations": [
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "CXXDeductionGuide",
+      "normalized": {
+        "attributes": [],
+        "canonical_type": "struct Box<int> (long)",
+        "consteval": false,
+        "constexpr": false,
+        "deduced_template": "usr:c:@ST>1#T@Box",
+        "explicit": false,
+        "inline_specified": false,
+        "kind": "CXXDeductionGuide",
+        "owning_module": "Provider",
+        "parameters": [
+          {
+            "pack": false,
+            "type": "long"
+          }
+        ],
+        "qualified_name": "<deduction guide for Box>",
+        "return_type": "struct Box<int>",
+        "variadic": false
+      },
+      "owning_module": "Provider",
+      "qualified_name": "<deduction guide for Box>",
+      "stable_id": "usr:c:@F@<deduction guide for Box>#L#",
+      "structural_key": "Provider|CXXDeductionGuide|<deduction guide for Box>|struct Box<int> (long)|0|",
+      "usr": "c:@F@<deduction guide for Box>#L#"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "ClassTemplateSpecialization",
+      "normalized": {
+        "attributes": [],
+        "kind": "ClassTemplateSpecialization",
+        "owning_module": "Provider",
+        "qualified_name": "Box",
+        "template_arguments": [
+          "int"
+        ]
+      },
+      "owning_module": "Provider",
+      "qualified_name": "Box",
+      "stable_id": "usr:c:@S@Box>#I",
+      "structural_key": "Provider|ClassTemplateSpecialization|Box||0|",
+      "usr": "c:@S@Box>#I"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "ClassTemplate",
+      "normalized": {
+        "attributes": [],
+        "bases": [],
+        "fields": [],
+        "kind": "ClassTemplate",
+        "methods": [
+          {
+            "name": "Box<T>",
+            "static": false,
+            "type": "void (type-parameter-0-0)",
+            "virtual": false
+          }
+        ],
+        "owning_module": "Provider",
+        "qualified_name": "Box",
+        "template_parameters": [
+          {
+            "has_default": false,
+            "kind": "TemplateTypeParm",
+            "name": "T",
+            "pack": false
+          }
+        ]
+      },
+      "owning_module": "Provider",
+      "qualified_name": "Box",
+      "stable_id": "usr:c:@ST>1#T@Box",
+      "structural_key": "Provider|ClassTemplate|Box||1|",
+      "usr": "c:@ST>1#T@Box"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "CXXConstructor",
+      "normalized": {
+        "attributes": [],
+        "canonical_type": "void (type-parameter-0-0)",
+        "consteval": false,
+        "constexpr": false,
+        "inline_specified": false,
+        "kind": "CXXConstructor",
+        "owning_module": "Provider",
+        "parameters": [
+          {
+            "pack": false,
+            "type": "type-parameter-0-0"
+          }
+        ],
+        "qualified_name": "Box::Box<T>",
+        "return_type": "void",
+        "variadic": false
+      },
+      "owning_module": "Provider",
+      "qualified_name": "Box::Box<T>",
+      "stable_id": "usr:c:@ST>1#T@Box@F@Box#t0.0#",
+      "structural_key": "Provider|CXXConstructor|Box::Box<T>|void (type-parameter-0-0)|0|",
+      "usr": "c:@ST>1#T@Box@F@Box#t0.0#"
+    }
+  ],
+  "had_errors": false,
+  "imports": [],
+  "logical_module": "Provider",
+  "mode": "provider",
+  "probe_request": "",
+  "probes": [],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/specializations_guides/add_deduction_guide/after/provider.cppm",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": []
+}

@@ -1,0 +1,127 @@
+{
+  "declarations": [
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "ClassTemplatePartialSpecialization",
+      "normalized": {
+        "attributes": [],
+        "bases": [],
+        "fields": [],
+        "kind": "ClassTemplatePartialSpecialization",
+        "methods": [
+          {
+            "name": "make",
+            "static": true,
+            "type": "long ()",
+            "virtual": false
+          }
+        ],
+        "owning_module": "Provider",
+        "qualified_name": "Box",
+        "template_arguments": [
+          "type-parameter-0-0 *"
+        ]
+      },
+      "owning_module": "Provider",
+      "qualified_name": "Box",
+      "stable_id": "usr:c:@SP>1#T@Box>#*t0.0",
+      "structural_key": "Provider|ClassTemplatePartialSpecialization|Box||0|",
+      "usr": "c:@SP>1#T@Box>#*t0.0"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "CXXMethod",
+      "normalized": {
+        "attributes": [],
+        "canonical_type": "long ()",
+        "consteval": false,
+        "constexpr": false,
+        "inline_specified": false,
+        "kind": "CXXMethod",
+        "owning_module": "Provider",
+        "parameters": [],
+        "qualified_name": "Box<type-parameter-0-0 *>::make",
+        "return_type": "long",
+        "variadic": false
+      },
+      "owning_module": "Provider",
+      "qualified_name": "Box<type-parameter-0-0 *>::make",
+      "stable_id": "usr:c:@SP>1#T@Box>#*t0.0@F@make#S",
+      "structural_key": "Provider|CXXMethod|Box<type-parameter-0-0 *>::make|long ()|0|",
+      "usr": "c:@SP>1#T@Box>#*t0.0@F@make#S"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "ClassTemplate",
+      "normalized": {
+        "attributes": [],
+        "bases": [],
+        "fields": [],
+        "kind": "ClassTemplate",
+        "methods": [
+          {
+            "name": "make",
+            "static": true,
+            "type": "int ()",
+            "virtual": false
+          }
+        ],
+        "owning_module": "Provider",
+        "qualified_name": "Box",
+        "template_parameters": [
+          {
+            "has_default": false,
+            "kind": "TemplateTypeParm",
+            "name": "T",
+            "pack": false
+          }
+        ]
+      },
+      "owning_module": "Provider",
+      "qualified_name": "Box",
+      "stable_id": "usr:c:@ST>1#T@Box",
+      "structural_key": "Provider|ClassTemplate|Box||1|",
+      "usr": "c:@ST>1#T@Box"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "CXXMethod",
+      "normalized": {
+        "attributes": [],
+        "canonical_type": "int ()",
+        "consteval": false,
+        "constexpr": false,
+        "inline_specified": false,
+        "kind": "CXXMethod",
+        "owning_module": "Provider",
+        "parameters": [],
+        "qualified_name": "Box::make",
+        "return_type": "int",
+        "variadic": false
+      },
+      "owning_module": "Provider",
+      "qualified_name": "Box::make",
+      "stable_id": "usr:c:@ST>1#T@Box@F@make#S",
+      "structural_key": "Provider|CXXMethod|Box::make|int ()|0|",
+      "usr": "c:@ST>1#T@Box@F@make#S"
+    }
+  ],
+  "had_errors": false,
+  "imports": [],
+  "logical_module": "Provider",
+  "mode": "provider",
+  "probe_request": "",
+  "probes": [],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/specializations_guides/add_partial_specialization/after/provider.cppm",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": []
+}

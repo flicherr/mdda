@@ -1,0 +1,129 @@
+{
+  "declarations": [],
+  "had_errors": false,
+  "imports": [],
+  "logical_module": "",
+  "mode": "consumer",
+  "probe_request": "result",
+  "probes": [
+    {
+      "deduced_type": "long",
+      "expression": "rank(1)",
+      "expression_type": "long",
+      "id": "result",
+      "location": {
+        "column": 54,
+        "file": "consumer.cpp",
+        "line": 4
+      },
+      "selected_declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "Function",
+        "normalized": {
+          "attributes": [],
+          "canonical_type": "long (int)",
+          "consteval": false,
+          "constexpr": false,
+          "inline_specified": false,
+          "kind": "Function",
+          "owning_module": "Provider",
+          "parameters": [
+            {
+              "pack": false,
+              "type": "int"
+            }
+          ],
+          "qualified_name": "rank",
+          "return_type": "long",
+          "variadic": false
+        },
+        "owning_module": "Provider",
+        "primary_template": {
+          "exported": true,
+          "implicit": false,
+          "kind": "FunctionTemplate",
+          "normalized": {
+            "attributes": [],
+            "kind": "FunctionTemplate",
+            "owning_module": "Provider",
+            "qualified_name": "rank",
+            "template_parameters": [
+              {
+                "has_default": false,
+                "kind": "TemplateTypeParm",
+                "name": "T",
+                "pack": false
+              }
+            ],
+            "template_requires": "(sizeof(type-parameter-0-0) == 4)",
+            "templated_declaration": "usr:c:@FT@>1#Trank#t0.0#L#"
+          },
+          "owning_module": "Provider",
+          "qualified_name": "rank",
+          "stable_id": "usr:c:@FT@>1#Trank#t0.0#L#",
+          "structural_key": "Provider|FunctionTemplate|rank|long (type-parameter-0-0)|1|(sizeof(type-parameter-0-0) == 4)",
+          "usr": "c:@FT@>1#Trank#t0.0#L#"
+        },
+        "qualified_name": "rank",
+        "stable_id": "usr:c:@F@rank<#I>#I#",
+        "structural_key": "Provider|Function|rank|long (int)|0|",
+        "usr": "c:@F@rank<#I>#I#"
+      }
+    }
+  ],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/lookup_overload/add_constrained_overload/after/consumer.cpp",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": [
+    {
+      "declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "FunctionTemplate",
+        "normalized": {
+          "attributes": [],
+          "kind": "FunctionTemplate",
+          "owning_module": "Provider",
+          "qualified_name": "rank",
+          "template_parameters": [
+            {
+              "has_default": false,
+              "kind": "TemplateTypeParm",
+              "name": "T",
+              "pack": false
+            }
+          ],
+          "template_requires": "(sizeof(type-parameter-0-0) == 4)",
+          "templated_declaration": "usr:c:@FT@>1#Trank#t0.0#L#"
+        },
+        "owning_module": "Provider",
+        "qualified_name": "rank",
+        "stable_id": "usr:c:@FT@>1#Trank#t0.0#L#",
+        "structural_key": "Provider|FunctionTemplate|rank|long (type-parameter-0-0)|1|(sizeof(type-parameter-0-0) == 4)",
+        "usr": "c:@FT@>1#Trank#t0.0#L#"
+      },
+      "identity": "usr:c:@FT@>1#Trank#t0.0#L#",
+      "locations": [
+        {
+          "column": 63,
+          "file": "consumer.cpp",
+          "line": 4
+        },
+        {
+          "column": 63,
+          "file": "consumer.cpp",
+          "line": 4
+        }
+      ],
+      "usage_kinds": [
+        "decl_ref",
+        "direct_callee"
+      ]
+    }
+  ]
+}

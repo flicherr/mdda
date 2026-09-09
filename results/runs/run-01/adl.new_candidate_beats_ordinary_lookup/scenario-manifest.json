@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "adl.new_candidate_beats_ordinary_lookup",
+  "family": "adl_conversions",
+  "description": "A new ADL candidate binds a non-const lvalue reference and beats the ordinary-lookup candidate.",
+  "language_rules": ["basic.lookup.argdep", "over.ics.rank"],
+  "mutation": "Add an associated-namespace overload with a better reference binding.",
+  "primary_module": "Provider",
+  "tracked_modules": ["Provider"],
+  "observation": { "kind": "selected_declaration", "probe_id": "result" },
+  "states": {
+    "before": { "modules": [{ "name": "Provider", "source": "before/provider.cppm", "imports": [] }], "consumer": "before/consumer.cpp" },
+    "after": { "modules": [{ "name": "Provider", "source": "after/provider.cppm", "imports": [] }], "consumer": "after/consumer.cpp" }
+  }
+}

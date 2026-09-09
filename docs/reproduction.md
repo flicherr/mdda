@@ -1,8 +1,8 @@
 # Reproduction checklist
 
-The root `README.md` is the authoritative command reference. This checklist
+The environment guide is the authoritative execution reference. This checklist
 records the evidence that must accompany a reproducible paper run rather than
-duplicating those commands.
+duplicating the commands from `environment/README.md`.
 
 1. Record the operating system, distribution, architecture, Clang full
    version, target triple, and standard library.
@@ -23,5 +23,21 @@ duplicating those commands.
 
 Every state must use dedicated BMI and module-cache directories. Full and
 Reduced BMI runs must be archived and reported as separate experimental
-conditions. The arbitrary output label used for a one-scenario check does not
-change the protocol.
+conditions. Output directory names do not affect the protocol.
+
+## Container acceptance criteria
+
+The default container entrypoint is considered successful only if:
+
+- the pinned toolchain check succeeds;
+- all unit tests and all 28 manifest validations succeed;
+- both complete runs contain 28 completed scenarios and no harness failures;
+- `orchestrator compare` reports equality after removing documented volatile
+  fields;
+- the publication directory contains `summary.json`, `summary.md`,
+  `results.csv`, `results.jsonl`, `toolchain.json`, `packages.txt`, and
+  `comparison.json`.
+
+The container refuses to overwrite `results/runs/run-01`,
+`results/runs/run-02`, or `results/publication`. Move the previous results or
+mount an empty results directory before another complete reproduction attempt.

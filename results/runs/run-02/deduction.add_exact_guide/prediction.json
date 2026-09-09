@@ -1,0 +1,47 @@
+{
+  "criteria": {
+    "full_interface": {
+      "added": [
+        "usr:c:@F@<deduction guide for Box>#L#",
+        "usr:c:@S@Box>#I"
+      ],
+      "after_count": 4,
+      "before_count": 2,
+      "modified": [],
+      "prediction": "changed_or_unknown",
+      "removed": []
+    },
+    "module": {
+      "after_hashes": {
+        "Provider": "sha256:1007bb00b02148386cb8266c24f2fa832e8788e2252bc552f57e6c0874358b3d"
+      },
+      "before_hashes": {
+        "Provider": "sha256:2ac2a9095899dd16697afcfa524cba73340224c912f4be8ff3918c43c106f475"
+      },
+      "changed_modules": [
+        "Provider"
+      ],
+      "prediction": "changed_or_unknown"
+    },
+    "used_declarations": {
+      "details": [
+        {
+          "after_fingerprint": "sha256:1fe4be900c9197f775103e080a3139e2af2a1c5cc05b654b74cf24319898d62c",
+          "before_fingerprint": "sha256:1fe4be900c9197f775103e080a3139e2af2a1c5cc05b654b74cf24319898d62c",
+          "equal": true,
+          "fingerprints_equal": true,
+          "identity": "usr:c:@ST>1#T@Box",
+          "match_method": "stable_id",
+          "match_status": "matched",
+          "normalized_comparison_performed": true
+        }
+      ],
+      "prediction": "unchanged",
+      "used_declaration_count": 1
+    }
+  },
+  "oracle_fields_available": false,
+  "scenario_id": "deduction.add_exact_guide",
+  "schema_version": 1,
+  "written_at": "2026-08-28T12:11:06+00:00"
+}

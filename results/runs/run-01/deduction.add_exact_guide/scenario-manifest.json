@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "deduction.add_exact_guide",
+  "family": "specializations_guides",
+  "description": "A new exact deduction guide changes the specialization produced by CTAD.",
+  "language_rules": ["over.match.class.deduct", "temp.deduct.guide"],
+  "mutation": "Add Box(long) -> Box<int> beside the implicit guide.",
+  "primary_module": "Provider",
+  "tracked_modules": ["Provider"],
+  "observation": { "kind": "deduced_type", "probe_id": "result" },
+  "states": {
+    "before": { "modules": [{ "name": "Provider", "source": "before/provider.cppm", "imports": [] }], "consumer": "before/consumer.cpp" },
+    "after": { "modules": [{ "name": "Provider", "source": "after/provider.cppm", "imports": [] }], "consumer": "after/consumer.cpp" }
+  }
+}
+

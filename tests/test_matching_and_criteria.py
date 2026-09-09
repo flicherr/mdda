@@ -3,6 +3,7 @@ from __future__ import annotations
 import inspect
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from orchestrator.criteria import (
     CHANGED_OR_UNKNOWN,
@@ -13,7 +14,11 @@ from orchestrator.criteria import (
     used_declaration_criterion,
 )
 from orchestrator.manifest import load_scenario
-from orchestrator.matching import DeclarationIndex, visible_surface
+from orchestrator.matching import (
+    DeclarationIndex,
+    compare_declarations,
+    visible_surface,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -87,6 +92,44 @@ class MatchingTests(unittest.TestCase):
             ["usr:base", "usr:provider"],
             [entry["stable_id"] for entry in visible_surface(scans, "Provider")],
         )
+
+    def test_fingerprint_mismatch_skips_normalized_comparison(self) -> None:
+        previous = declaration("usr:f", normalized_value=1)
+        current = declaration("usr:f", normalized_value=2)
+
+        with patch(
+            "orchestrator.matching.canonical_json",
+            side_effect=AssertionError("normalized representations were compared"),
+        ):
+            comparison = compare_declarations(previous, current)
+
+        self.assertFalse(comparison["fingerprints_equal"])
+        self.assertFalse(comparison["normalized_comparison_performed"])
+        self.assertFalse(comparison["equal"])
+
+    def test_fingerprint_match_is_verified_by_normalized_comparison(self) -> None:
+        previous = declaration("usr:f", normalized_value=1)
+        current = declaration("usr:f", normalized_value=1)
+
+        comparison = compare_declarations(previous, current)
+
+        self.assertTrue(comparison["fingerprints_equal"])
+        self.assertTrue(comparison["normalized_comparison_performed"])
+        self.assertTrue(comparison["equal"])
+
+    def test_fingerprint_collision_does_not_hide_a_change(self) -> None:
+        previous = declaration("usr:f", normalized_value=1)
+        current = declaration("usr:f", normalized_value=2)
+
+        with patch(
+            "orchestrator.matching.stable_hash",
+            return_value="sha256:simulated-collision",
+        ):
+            comparison = compare_declarations(previous, current)
+
+        self.assertTrue(comparison["fingerprints_equal"])
+        self.assertTrue(comparison["normalized_comparison_performed"])
+        self.assertFalse(comparison["equal"])
 
 
 class CriteriaTests(unittest.TestCase):

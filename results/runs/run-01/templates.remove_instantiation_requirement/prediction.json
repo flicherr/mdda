@@ -1,0 +1,61 @@
+{
+  "criteria": {
+    "full_interface": {
+      "added": [],
+      "after_count": 3,
+      "before_count": 4,
+      "modified": [],
+      "prediction": "changed_or_unknown",
+      "removed": [
+        "usr:c:@S@Source@value_type"
+      ]
+    },
+    "module": {
+      "after_hashes": {
+        "Provider": "sha256:aa5fd16b466b5060eb70e8e456251e5a6febc3e90978cd9247dd3e7dde778b1a"
+      },
+      "before_hashes": {
+        "Provider": "sha256:f55fad454ca0fd33d7dde9609c2fbe2e5495a6fa5e3ad7eb8fb322022a678c79"
+      },
+      "changed_modules": [
+        "Provider"
+      ],
+      "prediction": "changed_or_unknown"
+    },
+    "used_declarations": {
+      "details": [
+        {
+          "after_fingerprint": "sha256:35adf8d9b84fe9a0e9d27a9ca4a416dc059ae41460c0e877218cef1bcbf96c7f",
+          "before_fingerprint": "sha256:35adf8d9b84fe9a0e9d27a9ca4a416dc059ae41460c0e877218cef1bcbf96c7f",
+          "equal": true,
+          "fingerprints_equal": true,
+          "identity": "usr:c:@S@Source",
+          "match_method": "stable_id",
+          "match_status": "matched",
+          "normalized_comparison_performed": true
+        },
+        {
+          "after_fingerprint": "sha256:c1b65280deaaa4398216c6b8d73c19204699c02306e38b7b5dec8ab27eee6ca6",
+          "before_fingerprint": "sha256:c1b65280deaaa4398216c6b8d73c19204699c02306e38b7b5dec8ab27eee6ca6",
+          "equal": true,
+          "fingerprints_equal": true,
+          "identity": "usr:c:@FT@>1#Tproduce#^type-parameter-0-0:::value_type#",
+          "match_method": "stable_id+structural_key",
+          "match_status": "matched",
+          "normalized_comparison_performed": true
+        },
+        {
+          "identity": "usr:c:@S@Source@value_type",
+          "match_method": null,
+          "match_status": "missing"
+        }
+      ],
+      "prediction": "changed_or_unknown",
+      "used_declaration_count": 3
+    }
+  },
+  "oracle_fields_available": false,
+  "scenario_id": "templates.remove_instantiation_requirement",
+  "schema_version": 1,
+  "written_at": "2026-08-28T12:10:54+00:00"
+}

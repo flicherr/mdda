@@ -1,0 +1,136 @@
+{
+  "declarations": [],
+  "had_errors": false,
+  "imports": [],
+  "logical_module": "",
+  "mode": "consumer",
+  "probe_request": "result",
+  "probes": [
+    {
+      "deduced_type": "int",
+      "expression": "value + 1",
+      "expression_type": "int",
+      "id": "result",
+      "location": {
+        "column": 54,
+        "file": "consumer.cpp",
+        "line": 5
+      },
+      "selected_declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "CXXConversion",
+        "normalized": {
+          "attributes": [],
+          "canonical_type": "int () const",
+          "consteval": false,
+          "constexpr": false,
+          "inline_specified": false,
+          "kind": "CXXConversion",
+          "owning_module": "Provider",
+          "parameters": [],
+          "qualified_name": "model::X::operator int",
+          "return_type": "int",
+          "variadic": false
+        },
+        "owning_module": "Provider",
+        "qualified_name": "model::X::operator int",
+        "stable_id": "usr:c:@N@model@S@X@F@operator int#1",
+        "structural_key": "Provider|CXXConversion|model::X::operator int|int () const|0|",
+        "usr": "c:@N@model@S@X@F@operator int#1"
+      }
+    }
+  ],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/adl_conversions/add_operator/before/consumer.cpp",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": [
+    {
+      "declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "CXXRecord",
+        "normalized": {
+          "attributes": [],
+          "bases": [],
+          "fields": [],
+          "kind": "CXXRecord",
+          "methods": [
+            {
+              "name": "operator int",
+              "static": false,
+              "type": "int () const",
+              "virtual": false
+            }
+          ],
+          "owning_module": "Provider",
+          "qualified_name": "model::X"
+        },
+        "owning_module": "Provider",
+        "qualified_name": "model::X",
+        "stable_id": "usr:c:@N@model@S@X",
+        "structural_key": "Provider|CXXRecord|model::X||0|",
+        "usr": "c:@N@model@S@X"
+      },
+      "identity": "usr:c:@N@model@S@X",
+      "locations": [
+        {
+          "column": 3,
+          "file": "consumer.cpp",
+          "line": 4
+        },
+        {
+          "column": 12,
+          "file": "consumer.cpp",
+          "line": 4
+        }
+      ],
+      "usage_kinds": [
+        "constructed_type",
+        "type_loc"
+      ]
+    },
+    {
+      "declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "CXXConversion",
+        "normalized": {
+          "attributes": [],
+          "canonical_type": "int () const",
+          "consteval": false,
+          "constexpr": false,
+          "inline_specified": false,
+          "kind": "CXXConversion",
+          "owning_module": "Provider",
+          "parameters": [],
+          "qualified_name": "model::X::operator int",
+          "return_type": "int",
+          "variadic": false
+        },
+        "owning_module": "Provider",
+        "qualified_name": "model::X::operator int",
+        "stable_id": "usr:c:@N@model@S@X@F@operator int#1",
+        "structural_key": "Provider|CXXConversion|model::X::operator int|int () const|0|",
+        "usr": "c:@N@model@S@X@F@operator int#1"
+      },
+      "identity": "usr:c:@N@model@S@X@F@operator int#1",
+      "locations": [
+        {
+          "column": 63,
+          "file": "consumer.cpp",
+          "line": 5
+        },
+        {}
+      ],
+      "usage_kinds": [
+        "direct_callee",
+        "member_ref"
+      ]
+    }
+  ]
+}

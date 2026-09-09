@@ -1,0 +1,70 @@
+{
+  "compiler_status": {
+    "after": "semantic_failure",
+    "before": "success"
+  },
+  "completed_at": "2026-08-28T12:11:05+00:00",
+  "criteria": {
+    "full_interface": {
+      "classification": "correct_trigger",
+      "prediction": "changed_or_unknown"
+    },
+    "module": {
+      "classification": "correct_trigger",
+      "prediction": "changed_or_unknown"
+    },
+    "used_declarations": {
+      "classification": "unsafe_skip",
+      "prediction": "unchanged"
+    }
+  },
+  "description": "Removing re-export reachability makes an unchanged consumer name lookup fail although the used Base declaration is unchanged.",
+  "family": "reexport_reachability",
+  "language_rules": [
+    "module.import",
+    "module.reach",
+    "basic.lookup.general"
+  ],
+  "mutation": "Change export import Base to a private import.",
+  "observation": {
+    "after": {
+      "kind": "name_reachability",
+      "value": "semantic_failure"
+    },
+    "before": {
+      "kind": "name_reachability",
+      "value": "success"
+    },
+    "changed": true,
+    "specification": {
+      "kind": "name_reachability",
+      "probe_id": null
+    }
+  },
+  "prediction_file": "prediction.json",
+  "prediction_sha256": "sha256:de6128f1d8fd6eb5d3ecec476edec06606519bd737aef9f5a0c88f4aa76fff62",
+  "prediction_written_before_oracle": true,
+  "scenario_id": "reexport.remove_export_import",
+  "schema_version": 1,
+  "started_at": "2026-08-28T12:11:05+00:00",
+  "status": "completed",
+  "toolchain": {
+    "analyzer": "/workspace/build/manalyzer",
+    "analyzer_clang_major": 22,
+    "analyzer_clang_version_number": "22.1.8",
+    "analyzer_version": "manalyzer 0.4.0\nclang version 22.1.8",
+    "bmi_mode": "full",
+    "clang_major": 22,
+    "clang_version": "clang version 22.1.8\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin",
+    "clang_version_number": "22.1.8",
+    "clangxx": "/usr/bin/clang++",
+    "extra_analyzer_flags": [],
+    "extra_compile_flags": [
+      "-fno-color-diagnostics",
+      "-ferror-limit=0"
+    ],
+    "required_clang_version": "22.1.8",
+    "standard": "c++20",
+    "target": null
+  }
+}

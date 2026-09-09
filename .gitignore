@@ -2,11 +2,11 @@ build/
 python/*.egg-info/
 dist/
 .venv/
+.idea/
 __pycache__/
 *.py[cod]
 *.pcm
 *.o
 *.obj
-results/runs/
-results/publication/
+environment/toolchain.json
 .DS_Store

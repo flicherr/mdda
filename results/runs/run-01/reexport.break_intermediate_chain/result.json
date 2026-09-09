@@ -1,0 +1,69 @@
+{
+  "compiler_status": {
+    "after": "semantic_failure",
+    "before": "success"
+  },
+  "completed_at": "2026-08-28T12:10:49+00:00",
+  "criteria": {
+    "full_interface": {
+      "classification": "correct_trigger",
+      "prediction": "changed_or_unknown"
+    },
+    "module": {
+      "classification": "correct_trigger",
+      "prediction": "changed_or_unknown"
+    },
+    "used_declarations": {
+      "classification": "unsafe_skip",
+      "prediction": "unchanged"
+    }
+  },
+  "description": "An intermediate facade stops re-exporting Core while the top-level provider remains textually unchanged.",
+  "family": "reexport_reachability",
+  "language_rules": [
+    "module.import",
+    "module.reach"
+  ],
+  "mutation": "Change Facade's export import Core to a private import.",
+  "observation": {
+    "after": {
+      "kind": "name_reachability",
+      "value": "semantic_failure"
+    },
+    "before": {
+      "kind": "name_reachability",
+      "value": "success"
+    },
+    "changed": true,
+    "specification": {
+      "kind": "name_reachability",
+      "probe_id": null
+    }
+  },
+  "prediction_file": "prediction.json",
+  "prediction_sha256": "sha256:dc1304db02879f13a2a51ff20ce2548c7979c202767af57f61c7b07d4a1e349b",
+  "prediction_written_before_oracle": true,
+  "scenario_id": "reexport.break_intermediate_chain",
+  "schema_version": 1,
+  "started_at": "2026-08-28T12:10:48+00:00",
+  "status": "completed",
+  "toolchain": {
+    "analyzer": "/workspace/build/manalyzer",
+    "analyzer_clang_major": 22,
+    "analyzer_clang_version_number": "22.1.8",
+    "analyzer_version": "manalyzer 0.4.0\nclang version 22.1.8",
+    "bmi_mode": "full",
+    "clang_major": 22,
+    "clang_version": "clang version 22.1.8\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin",
+    "clang_version_number": "22.1.8",
+    "clangxx": "/usr/bin/clang++",
+    "extra_analyzer_flags": [],
+    "extra_compile_flags": [
+      "-fno-color-diagnostics",
+      "-ferror-limit=0"
+    ],
+    "required_clang_version": "22.1.8",
+    "standard": "c++20",
+    "target": null
+  }
+}

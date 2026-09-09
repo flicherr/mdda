@@ -1,0 +1,91 @@
+{
+  "declarations": [
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "FunctionTemplate",
+      "normalized": {
+        "attributes": [],
+        "kind": "FunctionTemplate",
+        "owning_module": "Provider",
+        "qualified_name": "act",
+        "template_parameters": [
+          {
+            "has_default": false,
+            "kind": "TemplateTypeParm",
+            "name": "T",
+            "pack": false
+          }
+        ],
+        "templated_declaration": "usr:c:@FT@>1#Tact#&1t0.0#I#"
+      },
+      "owning_module": "Provider",
+      "qualified_name": "act",
+      "stable_id": "usr:c:@FT@>1#Tact#&1t0.0#I#",
+      "structural_key": "Provider|FunctionTemplate|act|int (const type-parameter-0-0 &)|1|",
+      "usr": "c:@FT@>1#Tact#&1t0.0#I#"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "Function",
+      "normalized": {
+        "attributes": [],
+        "body": "{ return sizeof (value); }",
+        "canonical_type": "int (const type-parameter-0-0 &)",
+        "consteval": false,
+        "constexpr": false,
+        "inline_specified": false,
+        "kind": "Function",
+        "owning_module": "Provider",
+        "parameters": [
+          {
+            "pack": false,
+            "type": "const type-parameter-0-0 &"
+          }
+        ],
+        "qualified_name": "act",
+        "return_type": "int",
+        "variadic": false
+      },
+      "owning_module": "Provider",
+      "qualified_name": "act",
+      "stable_id": "usr:c:@FT@>1#Tact#&1t0.0#I#",
+      "structural_key": "Provider|Function|act|int (const type-parameter-0-0 &)|0|",
+      "usr": "c:@FT@>1#Tact#&1t0.0#I#"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "CXXRecord",
+      "normalized": {
+        "attributes": [],
+        "bases": [],
+        "fields": [],
+        "kind": "CXXRecord",
+        "methods": [],
+        "owning_module": "Provider",
+        "qualified_name": "model::X"
+      },
+      "owning_module": "Provider",
+      "qualified_name": "model::X",
+      "stable_id": "usr:c:@N@model@S@X",
+      "structural_key": "Provider|CXXRecord|model::X||0|",
+      "usr": "c:@N@model@S@X"
+    }
+  ],
+  "had_errors": false,
+  "imports": [],
+  "logical_module": "Provider",
+  "mode": "provider",
+  "probe_request": "",
+  "probes": [],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/adl_conversions/add_adl_function/before/provider.cppm",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": []
+}

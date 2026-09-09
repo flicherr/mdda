@@ -54,8 +54,7 @@ int main(int argc, const char **argv) {
 
     manalyzer::AnalyzerOptions Options;
     if (Mode == "provider") {
-        Options.Mode = manalyzer::AnalysisMode::Provider;
-    } else if (Mode == "consumer") {
+        Options.Mode = manalyzer::AnalysisMode::Provider;} else if (Mode == "consumer") {
         Options.Mode = manalyzer::AnalysisMode::Consumer;
     } else {
         llvm::errs() << "manalyzer: --mode must be provider or consumer\n";

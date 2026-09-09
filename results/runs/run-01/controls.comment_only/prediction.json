@@ -1,0 +1,44 @@
+{
+  "criteria": {
+    "full_interface": {
+      "added": [],
+      "after_count": 1,
+      "before_count": 1,
+      "modified": [],
+      "prediction": "unchanged",
+      "removed": []
+    },
+    "module": {
+      "after_hashes": {
+        "Provider": "sha256:e8b69fa6b672a58bfbd63ea14a852caf85735b3444d0b0ce8fec05310b82086f"
+      },
+      "before_hashes": {
+        "Provider": "sha256:2dd2c4df2b8fb0687f30cfc8ba725f83fd772c5958ed26a0dc48cd6302155be6"
+      },
+      "changed_modules": [
+        "Provider"
+      ],
+      "prediction": "changed_or_unknown"
+    },
+    "used_declarations": {
+      "details": [
+        {
+          "after_fingerprint": "sha256:6ec7ac1524ae39d0b115689ff4f74341298ae902a593e62a6d91f68ae35f5ecd",
+          "before_fingerprint": "sha256:6ec7ac1524ae39d0b115689ff4f74341298ae902a593e62a6d91f68ae35f5ecd",
+          "equal": true,
+          "fingerprints_equal": true,
+          "identity": "usr:c:@F@compute#I#",
+          "match_method": "stable_id",
+          "match_status": "matched",
+          "normalized_comparison_performed": true
+        }
+      ],
+      "prediction": "unchanged",
+      "used_declaration_count": 1
+    }
+  },
+  "oracle_fields_available": false,
+  "scenario_id": "controls.comment_only",
+  "schema_version": 1,
+  "written_at": "2026-08-28T12:10:44+00:00"
+}

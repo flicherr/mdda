@@ -1,0 +1,17 @@
+{
+  "declarations": [],
+  "had_errors": true,
+  "imports": [],
+  "logical_module": "",
+  "mode": "consumer",
+  "probe_request": "",
+  "probes": [],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/lookup_overload/add_ambiguous_candidate/after/consumer.cpp",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": []
+}

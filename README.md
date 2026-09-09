@@ -1,113 +1,94 @@
-# C++ Module Declaration Dependency Analysis
+# MDDA — Module Declaration Dependency Analysis
 
-This repository contains a reproducible experiment for studying whether a
-consumer of a C++20 named module must be semantically re-analysed after its
-providers change. The central object of evaluation is a declaration-level
-criterion: can the consumer be skipped when every declaration it previously
-used can still be matched with an equal normalized representation?
+![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus&logoColor=white)
+![Clang 22.1.8](https://img.shields.io/badge/Clang-22.1.8-262D3A?logo=llvm&logoColor=white)
+[![MIT License](https://img.shields.io/badge/license-MIT-2EA44F)](LICENSE)
 
-The project does not present all three implemented criteria as equal research
-contributions. It evaluates one target criterion against two reference
+MDDA is a reproducible experiment harness for analysing declaration-level
+dependencies between consumers and providers of C++20 named modules. It
+evaluates whether a consumer must be semantically re-analysed after a provider
+change and records the complete evidence needed to inspect that decision.
+
+The project is a research implementation, not a production incremental build
+system. Its fixed corpus targets language mechanisms that can invalidate a
+decision based only on declarations used during the previous consumer
+analysis.
+
+## Components
+
+| Path | Purpose |
+|---|---|
+| `analyzer/` | `manalyzer`, a C++/Clang LibTooling executable that extracts exported declarations, uses, and semantic observations |
+| `python/orchestrator/` | dependency-free Python package and CLI that builds isolated states, evaluates criteria, and aggregates results |
+| `scenarios/` | version-controlled corpus of 28 controlled provider changes |
+| `schemas/` | JSON schemas for scenario manifests and generated artifacts |
+| `environment/` | toolchain configuration and container entrypoint |
+| `docs/` | protocol, architecture, scenario catalog, reproduction checklist, and verification state |
+
+The C++ analyzer and Python orchestrator exchange versioned JSON documents.
+Compiler-specific AST processing remains in `manalyzer`; process execution,
+comparison, and result generation remain in the orchestrator.
+
+## How the experiment works
+
+The harness evaluates one declaration-level criterion against two coarser
 baselines:
 
-| Identifier | Role | Re-analysis is requested when... |
-|---|---|---|
-| `C_module` | maximally conservative baseline | any tracked provider source changes |
-| `C_interface` | exported-interface baseline | the recursively exported interface changes |
-| `C_used` | evaluated declaration-level criterion | a previously used declaration is missing, ambiguous, unsupported, or changed |
+| Criterion | Re-analysis is requested when... |
+|---|---|
+| <i>C</i><sub>module</sub> | any tracked provider source changes |
+| <i>C</i><sub>interface</sub> | the recursively exported provider interface changes |
+| <i>C</i><sub>used</sub> | a previously used declaration is missing, ambiguous, unsupported, or has changed |
 
-The baselines are necessary to quantify what declaration-level tracking gains
-in selectivity and where it becomes unsafe. Removing them would leave only a
-list of `C_used` successes and failures, with no meaningful comparison against
-coarser dependency models.
+For each scenario, MDDA:
 
-## Repository layout
+1. builds fresh module interfaces for the original provider state;
+2. analyses the unchanged consumer and records its used declarations and
+   selected semantic observation;
+3. builds the changed providers and writes all criterion predictions to
+   `prediction.json`;
+4. performs a clean analysis of the consumer against the changed providers;
+5. classifies each prediction by comparing the two observation values.
 
-- `analyzer/` contains the C++ LibTooling implementation; its executable and
-  CMake target are named `manalyzer`;
-- `python/orchestrator/` contains the dependency-free experiment orchestrator;
-- `scenarios/` contains the version-controlled 28-scenario corpus;
-- `environment/` contains the pinned toolchain configuration and optional
-  container definition;
-- `schemas/` defines the exchanged JSON formats;
-- `docs/` separates methodology, architecture, corpus description,
-  reproduction, and verification;
-- `results/` is the default location for raw runs and publication outputs.
+The prediction is written before the changed consumer is analysed, so the
+reference result cannot affect criterion evaluation. The complete procedure is
+defined in the [experiment protocol](docs/protocol.md).
 
-The root `CMakeLists.txt` owns project-wide C++ settings and adds
-`analyzer/`. The nested `analyzer/CMakeLists.txt` declares `manalyzer`, locates
-LLVM/Clang, and selects its link libraries. Python packaging is independent of
-CMake and is configured by the root `pyproject.toml`.
+## Requirements
 
-## Prerequisites
-
+- LLVM/Clang 22.1.8 development files and a matching `clang++` executable;
+- CMake 3.20 or newer;
 - Python 3.11 or newer;
-- CMake 3.20 or newer and Make (or another CMake build tool);
-- LLVM and Clang 22.1.8 development files, including `LLVMConfig.cmake` and
-  `ClangConfig.cmake`;
-- `clang++` 22.1.8 from the same LLVM installation used by `manalyzer`.
+- Ninja and GNU Make.
 
-Package names and configuration paths depend on the distribution. Typical
-installations are:
+The reference configuration uses Full BMI and rejects a different Clang
+version. Environment setup is documented for:
 
-### Arch Linux
+- [native Linux toolchains](environment/README.md#native-environment);
+- [Docker on Linux and Windows](environment/README.md#docker).
 
-```bash
-sudo pacman -S --needed clang llvm cmake python make
-```
+Neither execution path is preferred by the project. Docker provides the
+pinned Linux environment; native execution is useful when developing or
+debugging the analyzer.
 
-Common CMake package directories are `/usr/lib/cmake/llvm` and
-`/usr/lib/cmake/clang`. Arch is rolling-release, so verify that the installed
-packages are exactly 22.1.8 before producing a reference dataset.
+## Build and validate
 
-### Debian/Ubuntu with apt.llvm.org packages
-
-```bash
-sudo apt install clang-22 llvm-22-dev libclang-22-dev \
-  cmake python3 python3-venv make
-```
-
-Common CMake package directories are `/usr/lib/llvm-22/lib/cmake/llvm` and
-`/usr/lib/llvm-22/lib/cmake/clang`.
-
-For another distribution or a custom LLVM build, locate `LLVMConfig.cmake`
-and `ClangConfig.cmake`, then pass their parent directories through
-`LLVM_DIR` and `Clang_DIR`. The analyzer build prefers monolithic
-`clang-cpp`/`LLVM` targets and falls back to component libraries when needed.
-
-The reference protocol uses Full BMI. Reduced BMI is a separate experimental
-condition and must be recorded in a separate run.
-
-## Build `manalyzer`
-
-From the repository root, the normal build is:
+After configuring `environment/toolchain.json` for the selected environment:
 
 ```bash
 make build
+make test
+make validate
+make doctor
 ```
 
-The Makefile configures the root CMake project and places the executable at
-`analyzer/build/manalyzer`. Its relevant variables are:
+`make build` configures the root CMake project and produces
+`build/manalyzer`. The remaining commands run the Python tests, validate the
+scenario corpus, and verify the compiler/analyzer configuration.
 
-- `BUILD_DIR` — CMake build directory, default `analyzer/build`;
-- `BUILD_TYPE` — CMake build type, default `RelWithDebInfo`;
-- `CMAKE` — CMake executable, default `cmake`;
-- `CMAKE_ARGS` — additional configure arguments.
+## Command-line interface
 
-For example:
-
-```bash
-make build BUILD_TYPE=Release \
-  CMAKE_ARGS="-DLLVM_DIR=/path/to/llvm/lib/cmake/llvm -DClang_DIR=/path/to/clang/lib/cmake/clang"
-```
-
-Other targets are `make configure`, `make test`, `make validate`,
-`make doctor`, and `make clean`. Direct CMake commands remain available for
-unusual generators, but duplicating them is unnecessary for the normal path.
-
-## Install the Python orchestrator
-
-The root `pyproject.toml` maps the package to `python/orchestrator`:
+Installing the Python package exposes the `orchestrator` command:
 
 ```bash
 python3 -m venv .venv
@@ -115,120 +96,60 @@ python3 -m venv .venv
 python3 -m pip install -e .
 ```
 
-This installs the `orchestrator` command. Installation is optional; a command
-can instead be invoked as `PYTHONPATH=python python3 -m orchestrator ...`.
+Without installation, replace `orchestrator` with
+`PYTHONPATH=python python3 -m orchestrator`.
 
-Copy and review the native toolchain configuration:
+| Command | Purpose |
+|---|---|
+| `validate` | validate scenario manifests and corpus invariants |
+| `doctor` | verify the compiler, analyzer, target, and BMI configuration |
+| `run` | execute the full corpus or selected scenarios in a new directory |
+| `compare` | compare two runs after removing documented volatile fields |
+| `aggregate` | generate CSV, JSON, JSONL, and Markdown summaries |
 
-```bash
-cp environment/toolchain.example.json environment/toolchain.json
-orchestrator doctor --config environment/toolchain.json
-```
+The full reference sequence and platform-specific commands are kept in the
+[environment guide](environment/README.md). Use
+`orchestrator <command> --help` for all CLI options.
 
-`doctor` verifies both executables and rejects a mismatch in the required
-LLVM/Clang patch version.
+## Results
 
-## Validate and run
+A complete run stores raw scenario artifacts under `results/runs/`. Every
+completed scenario contains:
 
-```bash
-orchestrator validate --scenarios scenarios
+- `prediction.json`, written before the changed consumer is analysed;
+- `result.json`, containing both observations, compiler status, predictions,
+  and classifications;
+- exact compiler and analyzer commands with their standard streams;
+- separate provider and consumer scans for both states.
 
-orchestrator run \
-  --config environment/toolchain.json \
-  --scenarios scenarios \
-  --output results/runs/final-01
+Aggregation produces `results.csv`, `results.jsonl`, `summary.json`, and
+`summary.md`. CSV uses a semicolon delimiter. A semantic error in the changed
+consumer is a valid observation; `scenario_status=completed` only means that
+the experimental pipeline completed successfully.
 
-orchestrator aggregate \
-  --run results/runs/final-01 \
-  --output results/publication/final-01
+Generated runs and summaries are excluded from version control.
 
-orchestrator run \
-  --config environment/toolchain.json \
-  --scenarios scenarios \
-  --output results/runs/final-02
+## Documentation
 
-orchestrator compare \
-  --left results/runs/final-01 \
-  --right results/runs/final-02
-```
+- [Environment and execution](environment/README.md)
+- [Experiment protocol](docs/protocol.md)
+- [Architecture](docs/architecture.md)
+- [Scenario catalog](docs/scenario_catalog.md)
+- [Reproduction checklist](docs/reproduction.md)
+- [Verification state](docs/verification.md)
+- [JSON schemas](schemas/)
 
-`final-02` is an independent repetition of the complete experiment. It is
-created by the second `run` command and is used only to check determinism
-against `final-01`.
+## Scope
 
-During development, run one named scenario:
+The corpus is deliberately constructed around selected C++ language
+mechanisms. Its counts do not estimate change frequency or build-time savings
+in industrial projects, and a successful run does not establish that
+<i>C</i><sub>used</sub> is sufficient for arbitrary C++ programs.
 
-```bash
-orchestrator run \
-  --config environment/toolchain.json \
-  --scenarios scenarios \
-  --scenario overload.add_better_candidate \
-  --output results/runs/single-scenario
-```
+[WG21 P3057R0](https://wg21.link/P3057R0) discusses a related direction based
+on declaration hashes and dependency tracking. It is research context, not a
+specification implemented by MDDA.
 
-`single-scenario` is only a descriptive output-directory name; `--output` may
-point to any new directory. Earlier documentation used the conventional name
-`smoke`, but that term carried no special behavior and has been removed.
+## License
 
-## Result files
-
-`run` writes raw artifacts. Every completed scenario receives:
-
-```text
-results/runs/final-01/<scenario_id>/prediction.json
-results/runs/final-01/<scenario_id>/result.json
-```
-
-`prediction.json` requires no additional flag. It is written after provider
-scans and before the after-consumer is compiled or analysed. `result.json`
-then records both semantic observations, classifications, compiler status,
-and the prediction hash.
-
-`aggregate` produces four publication files:
-
-- `results.csv` — one semicolon-delimited row per scenario;
-- `results.jsonl` — complete scenario result objects;
-- `summary.json` — aggregate counts and rates;
-- `summary.md` — a readable rendering of the same summary.
-
-Important CSV columns are:
-
-- `scenario_status` — whether the harness completed the protocol or failed;
-- `semantic_outcome_kind` — the consumer property used as the reference
-  observation;
-- `outcome_before` and `outcome_after` — that property's values;
-- `outcome_changed` — whether those two values differ;
-- `<criterion>_prediction` and `<criterion>_classification` — each criterion's
-  decision and its comparison with the reference observation.
-
-A semantic error in the after-consumer is a valid completed scenario, not a
-harness failure. For example, `direct.remove_used_declaration` has
-`scenario_status=completed`, `semantic_outcome_kind=compile_status`, and
-`outcome_after=semantic_failure`.
-
-## Tests and documentation
-
-```bash
-make test
-make validate
-```
-
-Read the documents according to their distinct purpose:
-
-- `docs/protocol.md` — research question, controls, criteria, and
-  classification rules;
-- `docs/architecture.md` — component boundaries and data flow;
-- `docs/scenario_catalog.md` — scenario coverage and corpus invariants;
-- `docs/reproduction.md` — execution and archiving checklist;
-- `docs/verification.md` — current verification status and known invalidated
-  results.
-
-## Research context
-
-[WG21 P3057R0](https://wg21.link/P3057R0) discusses a declaration-hash
-direction that is relevant to used-declaration dependency tracking. It is one
-piece of related context, not the centre of this experiment, not a source of
-expected classifications, and not a specification implemented by this
-repository. The experiment is centred on an independently stated empirical
-question and uses clean compiler observations to evaluate the target
-declaration-level criterion.
+MDDA is distributed under the [MIT License](LICENSE).

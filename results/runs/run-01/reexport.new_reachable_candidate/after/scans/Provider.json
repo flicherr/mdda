@@ -1,0 +1,77 @@
+{
+  "declarations": [
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "FunctionTemplate",
+      "normalized": {
+        "attributes": [],
+        "kind": "FunctionTemplate",
+        "owning_module": "Provider",
+        "qualified_name": "score",
+        "template_parameters": [
+          {
+            "has_default": false,
+            "kind": "TemplateTypeParm",
+            "name": "T",
+            "pack": false
+          }
+        ],
+        "templated_declaration": "usr:c:@FT@>1#Tscore#t0.0#I#"
+      },
+      "owning_module": "Provider",
+      "qualified_name": "score",
+      "stable_id": "usr:c:@FT@>1#Tscore#t0.0#I#",
+      "structural_key": "Provider|FunctionTemplate|score|int (type-parameter-0-0)|1|",
+      "usr": "c:@FT@>1#Tscore#t0.0#I#"
+    },
+    {
+      "exported": true,
+      "implicit": false,
+      "kind": "Function",
+      "normalized": {
+        "attributes": [],
+        "body": "{ return sizeof (value); }",
+        "canonical_type": "int (type-parameter-0-0)",
+        "consteval": false,
+        "constexpr": false,
+        "inline_specified": false,
+        "kind": "Function",
+        "owning_module": "Provider",
+        "parameters": [
+          {
+            "pack": false,
+            "type": "type-parameter-0-0"
+          }
+        ],
+        "qualified_name": "score",
+        "return_type": "int",
+        "variadic": false
+      },
+      "owning_module": "Provider",
+      "qualified_name": "score",
+      "stable_id": "usr:c:@FT@>1#Tscore#t0.0#I#",
+      "structural_key": "Provider|Function|score|int (type-parameter-0-0)|0|",
+      "usr": "c:@FT@>1#Tscore#t0.0#I#"
+    }
+  ],
+  "had_errors": false,
+  "imports": [
+    {
+      "exported": true,
+      "module": "Base"
+    }
+  ],
+  "logical_module": "Provider",
+  "mode": "provider",
+  "probe_request": "",
+  "probes": [],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/reexport_reachability/new_reachable_template_competitor/after/provider.cppm",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": []
+}

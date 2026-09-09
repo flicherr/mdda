@@ -69,4 +69,3 @@ class CommandRunner:
             result.as_dict(),
         )
         return result
-

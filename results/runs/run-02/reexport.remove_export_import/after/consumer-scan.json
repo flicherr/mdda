@@ -1,0 +1,65 @@
+{
+  "declarations": [],
+  "had_errors": true,
+  "imports": [],
+  "logical_module": "",
+  "mode": "consumer",
+  "probe_request": "",
+  "probes": [],
+  "schema_version": 1,
+  "source": "/workspace/scenarios/reexport_reachability/remove_export_import/after/consumer.cpp",
+  "tool": {
+    "clang": "clang version 22.1.8",
+    "name": "manalyzer",
+    "version": "0.4.0"
+  },
+  "uses": [
+    {
+      "declaration": {
+        "exported": true,
+        "implicit": false,
+        "kind": "Function",
+        "normalized": {
+          "attributes": [],
+          "canonical_type": "int (int)",
+          "consteval": false,
+          "constexpr": false,
+          "inline_specified": false,
+          "kind": "Function",
+          "owning_module": "Base",
+          "parameters": [
+            {
+              "pack": false,
+              "type": "int"
+            }
+          ],
+          "qualified_name": "helper",
+          "return_type": "int",
+          "variadic": false
+        },
+        "owning_module": "Base",
+        "qualified_name": "helper",
+        "stable_id": "usr:c:@F@helper#I#",
+        "structural_key": "Base|Function|helper|int (int)|0|",
+        "usr": "c:@F@helper#I#"
+      },
+      "identity": "usr:c:@F@helper#I#",
+      "locations": [
+        {
+          "column": 21,
+          "file": "consumer.cpp",
+          "line": 3
+        },
+        {
+          "column": 21,
+          "file": "consumer.cpp",
+          "line": 3
+        }
+      ],
+      "usage_kinds": [
+        "decl_ref",
+        "direct_callee"
+      ]
+    }
+  ]
+}

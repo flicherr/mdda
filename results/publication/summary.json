@@ -1,0 +1,202 @@
+{
+  "completed": 28,
+  "criteria": {
+    "full_interface": {
+      "conservative_rate": {
+        "denominator": 3,
+        "numerator": 1,
+        "value": 0.3333333333333333
+      },
+      "counts": {
+        "conservative_trigger": 1,
+        "correct_skip": 2,
+        "correct_trigger": 25,
+        "unsafe_skip": 0
+      },
+      "miss_rate": {
+        "denominator": 25,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "unsafe_skip_rate": {
+        "denominator": 2,
+        "numerator": 0,
+        "value": 0.0
+      }
+    },
+    "module": {
+      "conservative_rate": {
+        "denominator": 3,
+        "numerator": 3,
+        "value": 1.0
+      },
+      "counts": {
+        "conservative_trigger": 3,
+        "correct_skip": 0,
+        "correct_trigger": 25,
+        "unsafe_skip": 0
+      },
+      "miss_rate": {
+        "denominator": 25,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "unsafe_skip_rate": {
+        "denominator": 0,
+        "numerator": 0,
+        "value": null
+      }
+    },
+    "used_declarations": {
+      "conservative_rate": {
+        "denominator": 3,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "counts": {
+        "conservative_trigger": 0,
+        "correct_skip": 3,
+        "correct_trigger": 5,
+        "unsafe_skip": 20
+      },
+      "miss_rate": {
+        "denominator": 25,
+        "numerator": 20,
+        "value": 0.8
+      },
+      "unsafe_skip_rate": {
+        "denominator": 23,
+        "numerator": 20,
+        "value": 0.8695652173913043
+      }
+    }
+  },
+  "failed_scenarios": [],
+  "families": {
+    "adl_conversions": {
+      "full_interface": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 5,
+        "unsafe_skip": 0
+      },
+      "module": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 5,
+        "unsafe_skip": 0
+      },
+      "used_declarations": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 1,
+        "unsafe_skip": 4
+      }
+    },
+    "direct_and_controls": {
+      "full_interface": {
+        "conservative_trigger": 1,
+        "correct_skip": 2,
+        "correct_trigger": 2,
+        "unsafe_skip": 0
+      },
+      "module": {
+        "conservative_trigger": 3,
+        "correct_skip": 0,
+        "correct_trigger": 2,
+        "unsafe_skip": 0
+      },
+      "used_declarations": {
+        "conservative_trigger": 0,
+        "correct_skip": 3,
+        "correct_trigger": 2,
+        "unsafe_skip": 0
+      }
+    },
+    "lookup_overload": {
+      "full_interface": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 5,
+        "unsafe_skip": 0
+      },
+      "module": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 5,
+        "unsafe_skip": 0
+      },
+      "used_declarations": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 0,
+        "unsafe_skip": 5
+      }
+    },
+    "reexport_reachability": {
+      "full_interface": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 4,
+        "unsafe_skip": 0
+      },
+      "module": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 4,
+        "unsafe_skip": 0
+      },
+      "used_declarations": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 0,
+        "unsafe_skip": 4
+      }
+    },
+    "specializations_guides": {
+      "full_interface": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 4,
+        "unsafe_skip": 0
+      },
+      "module": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 4,
+        "unsafe_skip": 0
+      },
+      "used_declarations": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 0,
+        "unsafe_skip": 4
+      }
+    },
+    "templates_constraints": {
+      "full_interface": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 5,
+        "unsafe_skip": 0
+      },
+      "module": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 5,
+        "unsafe_skip": 0
+      },
+      "used_declarations": {
+        "conservative_trigger": 0,
+        "correct_skip": 0,
+        "correct_trigger": 2,
+        "unsafe_skip": 3
+      }
+    }
+  },
+  "harness_failures": 0,
+  "outcome_changed": 25,
+  "outcome_unchanged": 3,
+  "schema_version": 1,
+  "total_results": 28
+}

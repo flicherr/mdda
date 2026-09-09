@@ -33,18 +33,23 @@ All module units are listed in topological build order.
 
 The experiment has one evaluated criterion and two baselines:
 
-- `C_module` is the maximally conservative source-change baseline. It returns
-  `unchanged` only when every tracked provider source is byte-identical.
-- `C_interface` is the exported-interface baseline. It returns `unchanged`
-  only when the recursively exported surface of the primary provider is equal
-  after AST normalization.
-- `C_used` is the evaluated declaration-level criterion. It returns
-  `unchanged` only when every unique declaration used in the previous consumer
-  is matched unambiguously and has an equal normalized representation.
+- <i>C</i><sub>module</sub> is the maximally conservative source-change
+  baseline. It returns `unchanged` only when every tracked provider source is
+  byte-identical.
+- <i>C</i><sub>interface</sub> is the exported-interface baseline. It returns
+  `unchanged` only when the recursively exported surface of the primary
+  provider is equal after AST normalization.
+- <i>C</i><sub>used</sub> is the evaluated declaration-level criterion. It
+  returns `unchanged` only when every unique declaration used in the previous
+  consumer is matched unambiguously, has the same semantic fingerprint, and
+  has an equal normalized representation. A fingerprint mismatch establishes
+  a change without comparing the representations; matching fingerprints are
+  verified by direct comparison so a hash collision cannot produce a false
+  equality.
 
 The first two criteria are retained because the research question concerns the
-relative selectivity and safety of `C_used`. They are reference points, not
-three equal centres of the study.
+relative selectivity and safety of <i>C</i><sub>used</sub>. They are reference
+points, not three equal centres of the study.
 
 Missing, ambiguous, or unsupported declaration matches are classified as
 `changed_or_unknown`. Declarations generated implicitly on demand are

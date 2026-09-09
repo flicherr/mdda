@@ -1,0 +1,84 @@
+{
+  "compiler_status": {
+    "after": "success",
+    "before": "success"
+  },
+  "completed_at": "2026-08-28T12:10:48+00:00",
+  "criteria": {
+    "full_interface": {
+      "classification": "correct_trigger",
+      "prediction": "changed_or_unknown"
+    },
+    "module": {
+      "classification": "correct_trigger",
+      "prediction": "changed_or_unknown"
+    },
+    "used_declarations": {
+      "classification": "unsafe_skip",
+      "prediction": "unchanged"
+    }
+  },
+  "description": "Turning a private import into an export-import exposes a better overload to the consumer.",
+  "family": "reexport_reachability",
+  "language_rules": [
+    "module.import",
+    "module.interface",
+    "over.match"
+  ],
+  "mutation": "Change import Base to export import Base in Provider.",
+  "observation": {
+    "after": {
+      "kind": "selected_declaration",
+      "value": {
+        "semantic_discriminators": {
+          "canonical_type": "int (int)",
+          "return_type": "int"
+        },
+        "stable_id": "usr:c:@F@route#I#",
+        "structural_key": "Base|Function|route|int (int)|0|"
+      }
+    },
+    "before": {
+      "kind": "selected_declaration",
+      "value": {
+        "semantic_discriminators": {
+          "canonical_type": "long (long)",
+          "return_type": "long"
+        },
+        "stable_id": "usr:c:@F@route#L#",
+        "structural_key": "Provider|Function|route|long (long)|0|"
+      }
+    },
+    "changed": true,
+    "specification": {
+      "kind": "selected_declaration",
+      "probe_id": "result"
+    }
+  },
+  "prediction_file": "prediction.json",
+  "prediction_sha256": "sha256:10bbbf212c7535f07f3b89863e8cb82c3a11d592abdd4feb5ce47a60077185b9",
+  "prediction_written_before_oracle": true,
+  "scenario_id": "reexport.add_export_import_overload",
+  "schema_version": 1,
+  "started_at": "2026-08-28T12:10:48+00:00",
+  "status": "completed",
+  "toolchain": {
+    "analyzer": "/workspace/build/manalyzer",
+    "analyzer_clang_major": 22,
+    "analyzer_clang_version_number": "22.1.8",
+    "analyzer_version": "manalyzer 0.4.0\nclang version 22.1.8",
+    "bmi_mode": "full",
+    "clang_major": 22,
+    "clang_version": "clang version 22.1.8\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin",
+    "clang_version_number": "22.1.8",
+    "clangxx": "/usr/bin/clang++",
+    "extra_analyzer_flags": [],
+    "extra_compile_flags": [
+      "-fno-color-diagnostics",
+      "-ferror-limit=0"
+    ],
+    "required_clang_version": "22.1.8",
+    "standard": "c++20",
+    "target": null
+  }
+}
