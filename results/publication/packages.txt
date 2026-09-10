@@ -1,6 +1,0 @@
-clang 22.1.8-1
-llvm 22.1.8-2
-cmake 4.4.2-1
-ninja 1.13.2-3
-python 3.14.7-1
-make 4.4.1-3
