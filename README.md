@@ -113,8 +113,14 @@ The full reference sequence and platform-specific commands are kept in the
 
 ## Results
 
-A complete run stores raw scenario artifacts under `results/runs/`. Every
-completed scenario contains:
+The reference experiment results are distributed as
+`mdda-0.4.0-experiment-results.zip` in the
+[v0.4.0 release](https://github.com/flicherr/mdda/releases/tag/v0.4.0).
+The archive contains two complete runs, aggregate results, their comparison,
+and environment metadata.
+
+When following the reproduction instructions, raw scenario artifacts are
+written locally under `results/runs/`. Every completed scenario contains:
 
 - `prediction.json`, written before the changed consumer is analysed;
 - `result.json`, containing both observations, compiler status, predictions,

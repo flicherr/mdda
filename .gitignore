@@ -8,5 +8,7 @@ __pycache__/
 *.pcm
 *.o
 *.obj
+/results/runs/
+/results/publication/
 environment/toolchain.json
 .DS_Store
