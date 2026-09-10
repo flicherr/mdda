@@ -68,7 +68,7 @@ else()
             clangBasic)
             if(NOT TARGET ${CLANG_TARGET})
                 message(FATAL_ERROR
-                    "Clang package exports neither clang-cpp nor ${CLANG_TARGET}. "
+                    "Clang pkg exports neither clang-cpp nor ${CLANG_TARGET}. "
                     "Set Clang_DIR to the Clang 22.1.8 CMake package directory."
                 )
             endif()
